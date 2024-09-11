@@ -1,0 +1,778 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(7, 6, 55);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 80px;
+    background-color: rgb(26, 4, 83);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li a:hover {
+    color: rgb(153, 153, 226);
+    font-size: 1.04rem;
+}
+
+nav ul li {
+    list-style: none;
+    margin: 0 23px;
+}
+
+main hr {
+    border: 0;
+    background: rgb(113 72 124);
+    height: 1.2px;
+    margin: 40px 84px;
+}
+
+.left {
+    font-size: 1.5rem;
+    margin: 0 120px;
+}
+
+main hr {
+    border: 0;
+    background: #5c58b3;
+    height: 1.5px;
+    margin: 150px 84px;
+
+}
+
+.firstSection {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 100px 0;
+}
+
+.firstSection>div {
+    width: 30%;
+}
+
+.left div {
+    width: 30%;
+}
+
+.leftSection {
+    font-size: 2rem;
+
+}
+
+.rightSection img {
+    width: 70%;
+    margin: 40px 0;
+}
+
+.purple {
+    color: rgb(174, 15, 218);
+}
+
+.text-gray {
+    color: gray;
+}
+
+#element {
+    color: rgb(174, 15, 218);
+}
+
+.secondSection {
+    font-family: 'Poppins', sans-serif;
+    max-width: 80vw;
+    margin: auto;
+    height: 80vh;
+}
+
+/* Define the keyframes for the fade-in animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Initial state before the animation starts */
+.secondSection {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 5s ease-out, transform 5s ease-out;
+}
+
+/* Add this class to trigger the animation */
+.secondSection.animate {
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.secondSection .h2 {
+    font-size: 75px;
+    text-align: center;
+    margin-top: 75px;
+}
+
+
+.secondSection .inf {
+    font-size: medium;
+    margin: 0 400px;
+    font-style: normal;
+    text-align: center;
+}
+
+.secondSection .button {
+    background-color: #121f6d;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 10px;
+    cursor: pointer;
+    border-radius: 30px;
+    height: none;
+}
+
+/* Initial state before the animation starts */
+.secondSection {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 5s ease-out, transform 5s ease-out;
+}
+
+/* Add this class to trigger the animation */
+.secondSection.animate {
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.text-with-vertical-line {
+    position: relative;
+    /* Sets positioning context for the pseudo-element */
+    padding-left: 20px;
+    /* Adds space between the text and the line */
+}
+
+.text-with-vertical-line::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    /* Positions the line at the start */
+    top: 0;
+    width: 2px;
+    /* Sets the width of the line */
+    height: 560%;
+    /* Makes the line the height of the content */
+    background-color: #ededed;
+    /* Sets the color of the line */
+}
+
+.fourthsection {
+    font-family: 'Poppins', sans-serif;
+    max-width: 80vw;
+    margin: auto;
+    height: 80vh;
+    text-align: center;
+}
+
+.fourthsection .h3 {
+    font-size: 75px;
+    text-align: center;
+    margin-top: 75px;
+}
+
+.fourthsection .exp {
+    text-align: center;
+    font-size: 18px;
+    margin: 10px 10px;
+
+}
+
+.fourthsection p {
+    text-align: justify;
+    font-size: 25px;
+
+}
+
+.fourthsection .var1 {
+    padding-right: 700px;
+    color: rgb(115, 130, 145);
+}
+
+.fourthsection .dec1 {
+    padding-right: 920px;
+    font-size: 15px;
+    margin: 5px 5px;
+}
+
+.fourthsection .da1 {
+    padding-right: 10px;
+    padding-left: 8px;
+    font-size: 20px;
+    text-align: start;
+    font-size: large;
+    margin: 20px 0;
+}
+
+.fourthsection .button {
+    background-color: #243278;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 20px 15px;
+    cursor: pointer;
+    border-radius: 30px;
+    height: none;
+
+}
+
+.fifthsection {
+    font-family: 'Poppins', sans-serif;
+    max-width: 80vw;
+    margin: auto;
+    height: 100vh;
+}
+
+.fifthsection h1 {
+
+    font-size: 8rex;
+    height: 1.7px;
+    margin: 100px 455px;
+    font-style: normal;
+}
+
+/*5*/
+.edu-section {
+    background: rgb(7, 6, 55);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.edu-head {
+    font-size: 75px;
+    text-align: center;
+    margin-top: 75px;
+}
+
+.edu-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #edf4ff; */
+    background-color: rgb(237, 236, 242);
+    border: 1px solid #5e769c;
+    border-radius: 40px;
+    /* background-color: #edf4ff; */
+    background-color: rgb(23, 19, 81);
+    margin: 20px;
+    padding: 20px;
+    width: 40%;
+    height: 100%;
+    perspective: 1000px;
+    left: 0;
+    box-shadow: 5px 7px 10px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 300ms;
+}
+
+.edu-card:hover {
+    transform: translateY(10px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.inst-name {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.edu-qualification {
+    font-size: 16px;
+    text-align: center;
+}
+
+.course-duration {
+    font-size: 14px;
+    color: #8a8a8a;
+    text-align: center;
+}
+
+.grade {
+    font-size: 16px;
+}
+
+.edu-logo-1 {
+    width: 100px;
+    height: 100px;
+    background: url(vtu-logo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    margin-bottom: 20px;
+}
+
+.edu-logo-2 {
+    width: 100px;
+    height: 100px;
+    background: url(pu.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    margin-bottom: 20px;
+}
+
+/* 3 */
+.thirdSection {
+    max-width: 80vw;
+    margin: 300px 100px;
+    height: 100vh;
+    text-align: right;
+
+}
+
+.thirdSection .h5 {
+    font-size: 75px;
+    text-align: center;
+    margin-top: 75px;
+    height: 100px;
+}
+
+.thirdSection {
+    max-width: 80vw;
+    margin: 300px auto;
+    text-align: center;
+    height: 900px;
+}
+
+.thirdSection .h2 {
+    font-size: 40px;
+    text-align: left;
+    margin-top: 75px;
+    height: 100px;
+    font-family: 'Poppins', sans-serif;
+    color: #d3d1d1;
+}
+
+.skill-category {
+    margin: 50px 0;
+}
+
+.skill-category h3 {
+    font-size: 40px;
+    color: #171313;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.skill-card {
+    width: 180px;
+    padding: 20px;
+    background: #ececee;
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 0.8s ease;
+}
+
+.skill-card i {
+    font-size: 30px;
+    color: #2a62b6;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.skill-card p {
+    font-size: 18px;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.skill-card:hover i {
+    color: #008CBA;
+}
+
+.skill-card:hover p {
+    color: #008CBA;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Resetting default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Projects container */
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 300px 300px;
+    gap: 70px;
+}
+/* Styling for the page heading */
+
+/* Project card styling */
+.project {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    width: 280px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.projects .h5{
+    font-size: 75px;
+    text-align: center;
+    margin: 10px 500px;
+}
+/* Adding a hover effect with a pseudo-element */
+.project::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(0, 0, 0, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.project:hover::before {
+    left: 100%;
+}
+
+.project:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Title styling */
+.project h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Description styling */
+.project p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Button styling */
+.view-more {
+    padding: 12px 25px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.view-more:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .projects {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Keyframes for the animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Adding fade-in animation to projects */
+.project {
+    animation: fadeIn 0.5s ease forwards;
+}
+/* Styling for the project buttons */
+.view-more {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #333; /* Button background color */
+    color: #fff; /* Button text color */
+    border: 2px solid #333; /* Border styling */
+    border-radius: 25px; /* Rounded corners */
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+/* Button hover effect */
+.view-more:hover {
+    background-color: #555; /* Darker shade on hover */
+    color: #fff;
+    transform: translateY(-3px); /* Moves button up slightly on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+/* Focus effect for accessibility */
+.view-more:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(51, 51, 51, 0.5); /* Outline around button on focus */
+}
+
+
+/* Contact Section */
+
+
+/* Styling for the contact section */
+.contact-head {
+    text-align: center;
+    font-size: 3rem;
+    margin: 40px 0;
+    color: #fffbfb;
+    letter-spacing: 1px;
+}
+
+/* Form container styling */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Styling for form groups to include icons */
+.form-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.form-group i {
+    position: absolute;
+    top: 65%;
+    left: 29px;
+    transform: translateY(-50%);
+    color: #333;
+    font-size: 1.2rem;
+}
+
+
+/* Styling for input fields and textarea */
+.contact-input {
+    width: calc(100% - 40px);
+    padding: 10px 10px 10px 35px; /* Add padding to the left to accommodate the icon */
+    margin: 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.contact-input:focus {
+    border-color: #333;
+    background-color: #fff;
+    outline: none;
+}
+
+/* Styling for submit button */
+.contact-submit-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-submit-btn:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+section#contactme {
+    height: 606px;
+}
+
+
+.footer {
+    padding: 0px;
+    background-color: rgb(26, 4, 83);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+    /* Ensures footer spans the entire width */
+}
+
+
+.footer-head {
+    color: #c5daff;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 2px;
+}
+
+.footer-navul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: px 0;
+    padding: 0;
+    /* Removes default padding */
+    list-style: none;
+    /* Removes bullets from list */
+    width: 100%;
+    margin-bottom: -5px;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.footer-navItem {
+    margin: 0 10px;
+    /* Adds horizontal spacing between items */
+}
+
+.footer-navLink {
+    text-decoration: none;
+    color: #c5daff;
+    padding: 20px;
+    font-size: 15px;
+    transition: color 0.3s;
+    margin-bottom: -10px;
+    /* Smooth hover transition */
+}
+
+
+.footer-navLink:hover {
+    color: #e4eeff;
+}
+
+section#footer {
+    height: 606px;
+}
+
+/* Container for Social Links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    /* Center-aligns the social links */
+    align-items: center;
+    margin: 10px 0;
+    /* Adds some vertical margin to the container */
+    gap: 15px;
+    /* Adds a gap between the social media icons */
+}
+
+/* Styling for Social Media Icons */
+.social-icons {
+    text-decoration: none;
+    /* Removes underline from links */
+    color: #9ca5b4;
+    /* Default color for icons */
+    font-size: 24px;
+    /* Size of the icons */
+    transition: color 0.3s, transform 0.3s;
+    /* Smooth transition for hover effects */
+}
+
+/* Hover Effect for Icons */
+.social-icons:hover {
+    color: #e4eeff;
+    /* Changes color on hover */
+    transform: scale(1.1);
+    /* Slightly increases size on hover */
+}
