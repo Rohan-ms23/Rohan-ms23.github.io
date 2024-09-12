@@ -11,132 +11,179 @@ body {
     background-color: rgb(7, 6, 55);
     color: white;
     font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 /* Mobile-friendly adjustments */
 @media screen and (max-width: 768px) {
-
     nav {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: auto;
+        width: 100%;
         padding: 10px 0;
     }
 
     nav ul {
+        display: flex;
         flex-direction: column;
         align-items: center;
+        width: 100%; /* Ensures nav ul spans full width */
+        padding: 0;
+        margin: 0;
     }
 
     nav ul li {
+        list-style: none;
         margin: 10px 0;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: 1.2rem;
+        display: block;
+        text-align: center;
+        width: 100%; /* Makes each link fill the width of the ul */
+        padding: 10px 0;
     }
 
     .left {
         font-size: 1.2rem;
         margin: 0 20px;
         text-align: center;
+        width: 100%; /* Full width to match nav ul */
     }
 
     .firstSection {
         flex-direction: column;
-        margin: 50px 0;
+        width: 100%;
+        margin: 20px 0;
+        align-items: center;
     }
 
     .firstSection>div,
     .left div {
         width: 90%;
-        margin: 20px 0;
+        margin: 10px 0;
+        text-align: center;
     }
 
     .rightSection img {
         width: 90%;
-        margin: 20px 0;
+        max-width: 100%;
+        margin: 10px auto;
     }
 
     .secondSection .h2 {
-        font-size: 40px;
-        margin-top: 40px;
+        font-size: 36px;
+        margin-top: 30px;
+        text-align: center;
     }
 
     .secondSection .inf {
         font-size: 1rem;
-        margin: 0 20px;
+        margin: 0 10px;
+        text-align: center;
     }
 
     .fourthsection {
-        max-width: 95vw;
-        margin: 20px auto;
-        height: auto;
+        width: 95%;
+        margin: 10px auto;
         padding: 20px;
     }
 
     .fourthsection .h3 {
-        font-size: 40px;
+        font-size: 32px;
         margin-top: 20px;
+        text-align: center;
     }
 
     .fifthsection h1 {
         font-size: 2rem;
-        margin: 20px auto;
+        margin: 10px auto;
         text-align: center;
+        width: 100%;
     }
 
     .edu-card {
         width: 90%;
         margin: 10px 0;
         padding: 10px;
+        text-align: center;
     }
 
     .thirdSection {
-        margin: 50px 20px;
+        margin: 30px 10px;
+        width: 95%;
         text-align: center;
-        height: auto;
     }
 
     .projects {
         flex-direction: column;
+        width: 100%;
         align-items: center;
-        margin: 20px;
-        gap: 30px;
+        margin: 10px;
+        gap: 20px;
     }
 
     .project {
         width: 90%;
-        padding: 15px;
+        padding: 10px;
+        margin: 10px auto;
+        text-align: center;
     }
 
     /* Contact Section Adjustments */
     .contact-head {
-        font-size: 2rem;
-        margin: 20px 0;
+        font-size: 1.8rem;
+        margin: 10px 0;
+        text-align: center;
     }
 
     .form-container {
-        max-width: 90%;
+        max-width: 95%;
         padding: 10px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .form-group {
+        position: relative;
+        width: 100%;
     }
 
     .form-group i {
+        position: absolute;
         left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
         font-size: 1rem;
     }
 
     .contact-input {
-        padding: 10px 10px 10px 30px; /* Adjusted for smaller screen */
+        width: 100%;
+        padding: 10px 10px 10px 30px;
+        margin-bottom: 10px;
     }
 
-    /* Footer adjustments */
     .footer {
-        padding: 10px;
+        display: flex;
         flex-direction: column;
-        height: auto;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 10px 0;
     }
 
     .footer-navul {
+        display: flex;
         flex-direction: column;
         align-items: center;
+        width: 100%;
+        padding: 0;
+        margin: 0;
     }
 
     .footer-navItem {
@@ -145,5 +192,8 @@ body {
 
     .social-links {
         margin: 10px 0;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
     }
 }
