@@ -30,7 +30,8 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: rgb(153, 153, 226);
+    color: rgb(153, 153, 226);
+
 }
 
 nav ul li {
@@ -764,7 +765,7 @@ section#footer {
     /* Removes underline from links */
     color: #9ca5b4;
     /* Default color for icons */
-    font-size: 24px;
+    font-size: 20px;
     /* Size of the icons */
     transition: color 0.3s, transform 0.3s;
     /* Smooth transition for hover effects */
