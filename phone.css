@@ -1,224 +1,176 @@
-/* General Reset */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body Styling */
 body {
+    background-color: rgb(7, 6, 55);
+    color: white;
     font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    padding: 0;
-    margin: 0;
 }
 
-/* Header Styling */
-header {
-    width: 100%;
-    padding: 15px 20px;
-    background-color: #fff;
+/* Smooth scrolling for all links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navigation bar styling */
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #ddd;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-/* Navigation Styling */
-nav .left {
-    font-size: 1.2rem;
-    font-weight: 600;
+    height: 60px;
+    padding: 0 20px;
+    background-color: rgb(26, 4, 83);
 }
 
 nav ul {
     display: flex;
-    flex-direction: column; /* Make it column for mobile */
-    padding: 10px;
-    width: 100%;
+    justify-content: center;
 }
 
 nav ul li {
     list-style: none;
+    margin: 0 10px;
 }
 
-.navLink {
-    color: #333;
+nav ul li a {
     text-decoration: none;
-    padding: 10px 0;
-    display: block;
+    color: white;
+    padding: 5px;
 }
 
-/* Main Section Styling */
-main {
-    padding: 20px;
+nav ul li a:hover {
+    color: rgb(153, 153, 226);
 }
 
-/* First Section (Intro) */
-.firstSection {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 20px 0;
+/* Sections styling for main content */
+.main hr {
+    border: 0;
+    background: rgb(113, 72, 124);
+    height: 1.2px;
+    margin: 40px 20px;
 }
 
-.firstSection .leftSection {
-    margin-bottom: 20px;
-}
-
-.firstSection .rightSection img {
-    width: 80%;
-    height: auto;
-}
-
-/* About Me Section */
-.secondSection {
-    padding: 20px 10px;
-    text-align: center;
-}
-
-.inf {
-    margin-top: 20px;
-}
-
-.button {
-    margin: 5px;
-    padding: 10px 15px;
-    border: none;
-    background-color: #4a00e0;
-    color: #fff;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-/* Experience and Education Section */
-.fourthsection,
-.edu-section {
-    padding: 20px 10px;
-    text-align: center;
-}
-
-.edu-card {
-    margin-bottom: 20px;
-}
-
-/* Skills Section */
-.thirdSection {
-    padding: 20px 10px;
-    text-align: center;
-}
-
-.skill-category {
-    margin-bottom: 20px;
-}
-
-.skill-card {
-    margin-bottom: 15px;
-    text-align: center;
-}
-
-/* Projects Section */
-.projects {
-    padding: 20px 10px;
-    text-align: center;
-}
-
-.project {
-    margin-bottom: 20px;
-}
-
-/* Contact Me Section */
-.contact-head {
-    padding: 20px 10px;
-    text-align: center;
-}
-
-.form-container {
-    padding: 15px;
-}
-
-.contact-input {
-    width: 90%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-/* Footer Styling */
-.footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-.footer-nav ul {
-    display: flex;
-    flex-direction: column;
-}
-
-.footer-navLink {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 0;
-}
-
-/* Social Links */
-.social-links {
-    padding: 10px 0;
-}
-
-.social-icons {
-    margin: 0 5px;
-    color: #fff;
-    text-decoration: none;
-    font-size: 20px;
-}
-
-/* Mobile-Specific Styling */
+/* Responsive design using media queries */
 @media screen and (max-width: 768px) {
-    /* Header Adjustments */
-    nav ul {
+    nav {
         flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li {
-        padding: 5px 0;
-    }
-
-    /* Main Adjustments */
-    .firstSection {
-        flex-direction: column;
+        align-items: flex-start;
         padding: 10px;
     }
 
-    .firstSection .leftSection, .firstSection .rightSection {
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .firstSection,
+    .secondSection,
+    .thirdSection,
+    .fourthSection,
+    .fifthSection,
+    .edu-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .leftSection,
+    .rightSection img {
         width: 100%;
+        margin: 20px 0;
     }
 
-    .firstSection .rightSection img {
-        width: 90%;
-        margin-top: 20px;
+    .secondSection .h2,
+    .thirdSection .h2,
+    .fourthSection .h3,
+    .edu-head {
+        font-size: 2rem;
+        margin: 20px 0;
     }
 
-    .secondSection, .fourthsection, .edu-section, .thirdSection, .projects, .contact-head {
-        padding: 15px;
+    .secondSection .inf,
+    .fourthSection p,
+    .thirdSection .h2 {
+        font-size: 1rem;
+        margin: 10px;
+    }
+
+    .contact-input {
+        width: calc(100% - 20px);
+        padding: 10px;
     }
 
     .form-container {
-        width: 95%;
-        margin: 0 auto;
+        width: 90%;
+        margin: 20px auto;
     }
 
-    .footer-nav ul {
+    .edu-card {
+        width: 90%;
+        margin: 20px 0;
+    }
+
+    .projects {
         flex-direction: column;
         align-items: center;
+        margin: 0;
+    }
+
+    .project {
+        width: 90%;
+        margin: 20px 0;
+    }
+
+    .footer {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .footer-navul {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .footer-navItem {
+        margin: 5px 0;
+    }
+
+    .social-links {
+        flex-direction: row;
+    }
+}
+
+/* Small mobile screens */
+@media screen and (max-width: 480px) {
+    nav {
+        height: auto;
+    }
+
+    .secondSection .h2,
+    .thirdSection .h2,
+    .fourthSection .h3,
+    .edu-head {
+        font-size: 1.5rem;
+    }
+
+    .contact-head {
+        font-size: 2rem;
+        margin: 20px 0;
+    }
+
+    .edu-card {
+        width: 95%;
+    }
+
+    .projects {
+        margin: 0;
     }
 }
