@@ -1,3 +1,4 @@
+/* Global reset and body styling */
 * {
     margin: 0;
     padding: 0;
@@ -8,179 +9,134 @@ body {
     background-color: rgb(7, 6, 55);
     color: white;
     font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
 }
 
-/* Mobile-friendly adjustments */
+/* Smooth scrolling for all links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navigation bar styling */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 20px;
+    background-color: rgb(26, 4, 83);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    list-style: none;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+}
+
+nav ul li a:hover {
+    color: rgb(153, 153, 226);
+}
+
+/* Sections styling for main content */
+.main hr {
+    border: 0;
+    background: rgb(113, 72, 124);
+    height: 1.2px;
+    margin: 40px 20px;
+}
+
+/* Responsive design using media queries */
 @media screen and (max-width: 768px) {
     nav {
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        padding: 10px 0;
+        align-items: flex-start;
+        padding: 10px;
     }
 
     nav ul {
-        display: flex;
         flex-direction: column;
-        align-items: center;
-        width: 100%; /* Ensures nav ul spans full width */
-        padding: 0;
-        margin: 0;
+        align-items: flex-start;
     }
 
     nav ul li {
-        list-style: none;
         margin: 10px 0;
     }
 
-    nav ul li a {
-        text-decoration: none;
-        color: white;
-        font-size: 1.2rem;
-        display: block;
-        text-align: center;
-        width: 100%; /* Makes each link fill the width of the ul */
-        padding: 10px 0;
-    }
-
-    .left {
-        font-size: 1.2rem;
-        margin: 0 20px;
-        text-align: center;
-        width: 100%; /* Full width to match nav ul */
-    }
-
-    .firstSection {
+    .firstSection,
+    .secondSection,
+    .thirdSection,
+    .fourthSection,
+    .fifthSection,
+    .edu-section {
         flex-direction: column;
-        width: 100%;
-        margin: 20px 0;
-        align-items: center;
-    }
-
-    .firstSection>div,
-    .left div {
-        width: 90%;
-        margin: 10px 0;
         text-align: center;
-    }
-
-    .rightSection img {
-        width: 90%;
-        max-width: 100%;
-        margin: 10px auto;
-    }
-
-    .secondSection .h2 {
-        font-size: 36px;
-        margin-top: 30px;
-        text-align: center;
-    }
-
-    .secondSection .inf {
-        font-size: 1rem;
-        margin: 0 10px;
-        text-align: center;
-    }
-
-    .fourthsection {
-        width: 95%;
-        margin: 10px auto;
         padding: 20px;
     }
 
-    .fourthsection .h3 {
-        font-size: 32px;
-        margin-top: 20px;
-        text-align: center;
+    .leftSection,
+    .rightSection img {
+        width: 100%;
+        margin: 20px 0;
     }
 
-    .fifthsection h1 {
+    .secondSection .h2,
+    .thirdSection .h2,
+    .fourthSection .h3,
+    .edu-head {
         font-size: 2rem;
-        margin: 10px auto;
-        text-align: center;
-        width: 100%;
+        margin: 20px 0;
+    }
+
+    .secondSection .inf,
+    .fourthSection p,
+    .thirdSection .h2 {
+        font-size: 1rem;
+        margin: 10px;
+    }
+
+    .contact-input {
+        width: calc(100% - 20px);
+        padding: 10px;
+    }
+
+    .form-container {
+        width: 90%;
+        margin: 20px auto;
     }
 
     .edu-card {
         width: 90%;
-        margin: 10px 0;
-        padding: 10px;
-        text-align: center;
-    }
-
-    .thirdSection {
-        margin: 30px 10px;
-        width: 95%;
-        text-align: center;
+        margin: 20px 0;
     }
 
     .projects {
         flex-direction: column;
-        width: 100%;
         align-items: center;
-        margin: 10px;
-        gap: 20px;
+        margin: 0;
     }
 
     .project {
         width: 90%;
-        padding: 10px;
-        margin: 10px auto;
-        text-align: center;
-    }
-
-    /* Contact Section Adjustments */
-    .contact-head {
-        font-size: 1.8rem;
-        margin: 10px 0;
-        text-align: center;
-    }
-
-    .form-container {
-        max-width: 95%;
-        padding: 10px;
-        margin: 0 auto;
-        width: 100%;
-    }
-
-    .form-group {
-        position: relative;
-        width: 100%;
-    }
-
-    .form-group i {
-        position: absolute;
-        left: 15px;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 1rem;
-    }
-
-    .contact-input {
-        width: 100%;
-        padding: 10px 10px 10px 30px;
-        margin-bottom: 10px;
+        margin: 20px 0;
     }
 
     .footer {
-        display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        padding: 10px 0;
+        padding: 20px;
     }
 
     .footer-navul {
-        display: flex;
         flex-direction: column;
-        align-items: center;
-        width: 100%;
         padding: 0;
-        margin: 0;
     }
 
     .footer-navItem {
@@ -188,9 +144,33 @@ body {
     }
 
     .social-links {
-        margin: 10px 0;
-        display: flex;
-        justify-content: center;
-        gap: 10px;
+        flex-direction: row;
+    }
+}
+
+/* Small mobile screens */
+@media screen and (max-width: 480px) {
+    nav {
+        height: auto;
+    }
+
+    .secondSection .h2,
+    .thirdSection .h2,
+    .fourthSection .h3,
+    .edu-head {
+        font-size: 1.5rem;
+    }
+
+    .contact-head {
+        font-size: 2rem;
+        margin: 20px 0;
+    }
+
+    .edu-card {
+        width: 95%;
+    }
+
+    .projects {
+        margin: 0;
     }
 }
