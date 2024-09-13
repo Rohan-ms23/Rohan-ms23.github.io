@@ -207,6 +207,7 @@ body {
     .footer-navul {
         flex-direction: column;
         align-items: center;
+        height: 10px;
     }
 
     .footer-navItem {
