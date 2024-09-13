@@ -17,19 +17,25 @@
 
 <body>
     <header>
-        <nav class=' h-nav-resp'>
-            <div class="left">Rohan's Portfolio</div>
-            <div class="right"></div>
-            <ul class='v-class-resp'>
+        <section class="nav-section">
+        <nav class="navig h-nav-resp">
+            <div class="profilePic" onclick="profileBtn()"></div>
+            <ul class="navul v-class-resp">
                 <li class="navItem"><a href="#" class="navLink">Home</a></li>
-                <li class="navItem"><a href="#about me" class="navLink">About Me</a></li>
+                <li class="navItem"><a href="#about" class="navLink">About</a></li>
                 <li class="navItem"><a href="#experience" class="navLink">Experience</a></li>
                 <li class="navItem"><a href="#education" class="navLink">Education</a></li>
                 <li class="navItem"><a href="#skills" class="navLink">Skills</a></li>
                 <li class="navItem"><a href="#projects" class="navLink">Projects</a></li>
-                <li class="navItem"><a href="#contactme" class="navLink">Contact Me</a></li>
+                <li class="navItem"><a href="#contact-me" class="navLink">Contact Me</a></li>
             </ul>
+            <div class="burger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
         </nav>
+    </section>
     </header>
     <main>
         <section class="firstSection" id="#">
@@ -43,7 +49,7 @@
             </div>
         </section>
         <hr>
-        <section class="secondSection" id="about me">
+        <section class="secondSection" id="about">
             <p class="h2">About Me</p>
             <div class="inf">
                 <div>I'm a Computer Science and Engineering Student at Visvesvaraya Technological University. UI/UX
@@ -199,7 +205,7 @@
     </section>
 
 
-    <section class="contact-head" id="contactme">
+    <section class="contact-head" id="contact-me">
         <p class="contact-head">Contact Me</p>
         <form action="https://api.web3forms.com/submit" method="POST"
             method="post" class="form-container fade">
