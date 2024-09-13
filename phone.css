@@ -65,6 +65,13 @@ body {
         width: 90%;
         margin: 20px 0;
     }
+    main hr {
+    border: 0;
+    background: #5c58b3;
+    height: 1.5px;
+    width: 300px;
+    margin: 150px 50px;
+}
 
     .secondSection .h2 {
         font-size: 40px;
@@ -133,11 +140,19 @@ body {
         margin: 10px 0;
         padding: 10px;
     }
-
+    .thirdsection .h2{
+        font-size: 37px;
+    }
     .thirdSection {
-        margin: 50px 20px;
-        text-align: center;
-        height: auto;
+            margin: 50px 35px;
+            text-align: center;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
     }
 
     .projects .h5 {
