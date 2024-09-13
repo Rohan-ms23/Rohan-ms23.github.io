@@ -17,10 +17,10 @@
 
 <body>
     <header>
-        <nav>
+        <nav class=' h-nav-resp'>
             <div class="left">Rohan's Portfolio</div>
             <div class="right"></div>
-            <ul>
+            <ul class='v-class-resp'>
                 <li class="navItem"><a href="#" class="navLink">Home</a></li>
                 <li class="navItem"><a href="#about me" class="navLink">About Me</a></li>
                 <li class="navItem"><a href="#experience" class="navLink">Experience</a></li>
@@ -255,6 +255,14 @@
         var typed = new Typed('#element', {
             strings: ['Computer Science Student.', 'Web developer.', 'Web Designer.', 'UI/UX Designer.'],
             typeSpeed: 100,
+        });
+        burger = document.querySelector('.burger');
+        navig = document.querySelector('.navig');
+        navul = document.querySelector('.navul');
+        
+        burger.addEventListener('click', () => {
+            navig.classList.toggle('h-nav-resp');
+            navul.classList.toggle('v-class-resp');
         });
     </script>
     <script>
