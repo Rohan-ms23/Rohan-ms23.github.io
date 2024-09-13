@@ -82,7 +82,41 @@ body {
         margin: 20px auto;
         text-align: center;
     }
+    .fourthsection .var1{
+    padding-right: 45px;
+    color: rgb(115, 130, 145);
+    text-align: left;
+    margin: 5px 10px;
+    }
+    .fourthsection .dec1 {
+        padding-right: 80px;
+        font-size: 15px;
+        margin: 5px -10px;
+    }
+    .text-with-vertical-line::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 2px;
+        height: 883%;
+        background-color: #ededed;
+    }
 
+    .fourthsection .da1 {
+        padding-right: 0px;
+        padding-left: 50px;
+        font-size: 20px;
+        text-align: left;
+        font-size: large;
+        margin: 10px -45px;
+    }
+
+    .edu-head {
+        font-size: 50px;
+        text-align: center;
+        margin-top: 75px;
+    }
     .edu-card {
         width: 90%;
         margin: 10px 0;
@@ -95,6 +129,11 @@ body {
         height: auto;
     }
 
+    .projects .h5 {
+        font-size: 60px;
+        text-align: center;
+        margin: 0px 50px;
+    }
     .projects {
         flex-direction: column;
         align-items: center;
@@ -109,7 +148,7 @@ body {
 
     /* Contact Section Adjustments */
     .contact-head {
-        font-size: 2rem;
+        font-size: 50px;
         margin: 20px 0;
     }
 
@@ -124,7 +163,8 @@ body {
     }
 
     .contact-input {
-        padding: 10px 10px 10px 30px; /* Adjusted for smaller screen */
+        padding: 10px 10px 10px 30px;
+        /* Adjusted for smaller screen */
     }
 
     /* Footer adjustments */
