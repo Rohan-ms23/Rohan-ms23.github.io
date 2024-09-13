@@ -1,12 +1,3 @@
-/* Base Styles for Mobile */
-
-/* Resetting default styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     background-color: rgb(7, 6, 55);
     color: white;
@@ -32,6 +23,26 @@ body {
     nav ul li {
         margin: 10px 0;
     }
+
+    .burger {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu {
+    width: 70px;
+    height: 30px;
+}
+
+.h-nav-resp {
+    height: 80px;
+}
+
+.v-class-resp {
+    display: none;
+}
 
     .left {
         font-size: 1.2rem;
