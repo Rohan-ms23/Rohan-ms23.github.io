@@ -199,24 +199,19 @@ body {
 
     /* Footer adjustments */
     .footer {
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+        padding: 10px;
+        flex-direction: column;
+        height: auto;
+    }
 
-.footer-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+    .footer-navul {
+        flex-direction: column;
+        align-items: center;
+    }
 
-.footer-nav li {
-    margin: 5px 0;
-}
+    .footer-navItem {
+        margin: 5px 0;
+    }
     .social-links {
         margin: 10px 0;
     }
