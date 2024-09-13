@@ -23,6 +23,7 @@ html {
 }
 
 .navig {
+    top: 0;
     display: flex;
     padding: 15px;
     align-items: center;
