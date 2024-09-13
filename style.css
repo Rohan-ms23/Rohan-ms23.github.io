@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -32,6 +33,23 @@ nav ul li a {
 nav ul li a:hover {
     color: rgb(153, 153, 226);
 
+}
+
+.burger {
+    width: 33px;
+    height: 50px;
+    display: none;
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 15px;
+}
+
+.line {
+    background-color: white;
+    width: 33px;
+    height: 4px;
+    margin: 3px 5px;
 }
 
 nav ul li {
