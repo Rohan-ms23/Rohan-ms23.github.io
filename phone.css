@@ -217,18 +217,6 @@ body {
 .footer-nav li {
     margin: 5px 0;
 }
-
-@media screen and (max-width: 768px) {
-    .footer-nav ul {
-        display: none;
-    }
-
-    .footer-nav ul.active {
-        display: flex;
-    }
-}
-
     .social-links {
         margin: 10px 0;
     }
-}
