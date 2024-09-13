@@ -13,11 +13,7 @@ html {
      scroll-behavior: smooth;
 }
 .nav-section {
-
-    /* background-color: rgb(121, 175, 255); */
-    /* background-color: rgb(241 241 241); */
-    /* background-color: rgb(167, 205, 255); */
-    background-color: #4d94ff;
+    background-color: rgb(26, 4, 83);
     display: flex;
     align-items: center;
     box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, .2);
