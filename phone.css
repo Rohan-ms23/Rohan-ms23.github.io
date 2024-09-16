@@ -4,7 +4,6 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-/* Mobile-friendly adjustments */
 @media screen and (max-width: 768px) {
 
     .navul {
@@ -176,7 +175,6 @@ body {
         padding: 15px;
     }
 
-    /* Contact Section Adjustments */
     .contact-head {
         font-size: 50px;
         margin: 20px 20px;
@@ -195,10 +193,9 @@ body {
 
     .contact-input {
         padding: 10px 10px 10px 30px;
-        /* Adjusted for smaller screen */
     }
 
-    /* Footer adjustments */
+   
     .footer {
         padding: 10px;
         flex-direction: column;
