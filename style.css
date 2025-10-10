@@ -26,7 +26,29 @@ body {
     z-index: 3;
     width: 100%;
     top: 0;
+    transition: background 0.3s, color 0.3s;
 }
+
+.nav-section.scrolled {
+    background-color: #222;
+    color: #fff;
+    border-radius: 0 0 18px 18px;
+    box-shadow: 0 4px 18px rgba(74, 108, 247, 0.12);
+}
+
+.nav-section.scrolled .navLink {
+    color: #fff;
+}
+
+.nav-section.scrolled .navLink:hover {
+    color: #4A6CF7;
+}
+.nav-section.scrolled .profilePic:hover {
+    box-shadow: 0 0 0 4px #4A6CF733;
+    transform: scale(1.08);
+    transition: all 0.3s;
+}
+
 
 .navig {
     display: flex;
@@ -45,7 +67,9 @@ body {
 }
 
 .profilePic:hover {
-    cursor: pointer;
+    box-shadow: 0 0 0 4px #4A6CF733;
+    transform: scale(1.08);
+    transition: all 0.3s;
 }
 
 .navul {
@@ -97,46 +121,98 @@ main hr {
     height: 1px;
     margin: 80px 84px;
 }
-
-/* ===== Hero Section ===== */
+/* ===== Home Section ===== */
 .firstSection {
     display: flex;
-    justify-content: space-around;
     align-items: center;
-    margin: 120px 0;
-    color: #222;
-}
-
-.firstSection > div {
-    width: 35%;
+    justify-content: space-between;
+    padding: 100px 0 60px 0;
+    max-width: 1250px;
+    margin: 0 auto;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
 }
 
 .leftSection {
-    font-size: 2rem;
+    width: 50%;
+    padding-right: 40px;
 }
 
-.rightSection img {
-    width: 80%;
-    margin: 40px 0;
+.leftSection h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 12px;
 }
 
-.purple {
+.leftSection .purple {
     color: #4A6CF7;
 }
 
-.text-gray {
-    color: #777;
-}
-
-#element {
+.hero-subtitle {
+    font-size: 1.5rem;
     color: #4A6CF7;
+    margin-bottom: 18px;
+    font-weight: 600;
 }
 
+.typed-text, #element {
+    font-size: 1.2rem;
+    color: #555;
+    font-weight: 700;
+    display: inline-block;
+    letter-spacing: 1px;
+    vertical-align: middle;
+    margin-bottom: 0;
+    min-height: 0;
+}
+
+.hero-buttons {
+    margin-top: 24px;
+}
+
+.hero-buttons .button {
+    background-color: #4A6CF7;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin-right: 16px;
+    transition: background 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 8px rgba(74, 108, 247, 0.12);
+    display: inline-block;
+}
+
+.hero-buttons .button:hover {
+    background-color: #3b5ad8;
+    box-shadow: 0 4px 16px rgba(74, 108, 247, 0.18);
+}
+
+.rightSection {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-img {
+    width: 320px;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(74, 108, 247, 0.10);
+}
 /* ===== About Section ===== */
 .secondSection {
-    max-width: 80vw;
-    margin: auto;
-    text-align: center;
+    max-width: 800px;
+    margin: 120px auto 0 auto;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(74, 108, 247, 0.08);
+    padding: 48px 36px;
+    text-align: left;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -148,15 +224,18 @@ main hr {
 }
 
 .secondSection .h2 {
-    font-size: 3rem;
-    margin-top: 75px;
-    color: #111;
+    font-size: 2.5rem;
+    color: #111213;
+    font-weight: 700;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
 }
 
 .secondSection .inf {
-    font-size: 1.1rem;
-    margin: 0 200px;
-    color: #555;
+    font-size: 1.15rem;
+    color: #444;
+    margin-bottom: 28px;
+    line-height: 1.8;
 }
 
 .secondSection .button {
@@ -167,13 +246,19 @@ main hr {
     font-size: 1rem;
     border-radius: 30px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(74, 108, 247, 0.12);
+    transition: background 0.3s, box-shadow 0.3s;
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    
 }
 
 .secondSection .button:hover {
     background-color: #3b5ad8;
+    box-shadow: 0 4px 16px rgba(74, 108, 247, 0.18);
 }
-
 /* ===== Skills Section ===== */
 .thirdSection {
     max-width: 80vw;
@@ -199,7 +284,7 @@ main hr {
     width: 180px;
     padding: 20px;
     background: #ffffff;
-    border: 1px solid #e2e2e2;
+    border: 1px solid #282525;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
     text-align: center;
@@ -223,6 +308,112 @@ main hr {
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
 }
 
+/* ===== Experience Section ===== */
+.fourthsection {
+    max-width: 800px;
+    margin: 100px auto 60px auto;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(74, 108, 247, 0.08);
+    padding: 40px 32px;
+    text-align: left;
+    box-shadow: inset;
+}
+
+.fourthsection .h3 {
+    font-size: 2.5rem;
+    color: #0a0b0b;
+    margin-bottom: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.fourthsection hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, #4A6CF7 0%, #a1c4fd 100%);
+    margin: 32px 0;
+    border-radius: 2px;
+    opacity: 0.7;
+}
+
+.text-with-vertical-line {
+    position: relative;
+    font-size: 1.3rem;
+    color: #222;
+    font-weight: 600;
+    margin-bottom: 24px;
+    padding-left: 18px;
+}
+
+.text-with-vertical-line::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 4px;
+    height: 80%;
+    background: #4A6CF7;
+    border-radius: 2px;
+}
+
+.exp {
+    margin-bottom: 18px;
+}
+
+.var1 {
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.dec1 {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.da1 {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 18px;
+    line-height: 1.5;
+}
+
+.da2 {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 18px;
+    line-height: 1.5;
+    margin-top: 18px;
+    
+}
+.da2 .button {
+    margin-top: 16px;
+}
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+.fourthsection .button {
+    background-color: #4A6CF7;
+    color: #fff;
+    border: none;
+    padding: 10px 28px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s;
+    display: inline-block;
+}
+
+.fourthsection .button:hover {
+    background-color: #3b5ad8;
+}
+
+
 /* ===== Education Section ===== */
 .edu-section {
     background: #ffffff;
@@ -230,12 +421,46 @@ main hr {
     flex-direction: column;
     align-items: center;
     padding: 60px 0;
+    margin: 150px auto;
+    max-width: 80vw;
+    border-radius: 15px;
+    box-shadow: 0 20px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
 }
 
 .edu-head {
     font-size: 3rem;
     color: #111;
     margin-bottom: 30px;
+    
+}
+.edu-logo-2 {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 20px;
+    background-image: url('pu.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    display: inline-block;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.edu-logo-1 {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 20px;
+    background-image: url('vtu-logo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    display: inline-block;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
 }
 
 .edu-card {
