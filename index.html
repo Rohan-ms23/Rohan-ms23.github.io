@@ -55,7 +55,7 @@
                     alt="Rohan M S profile illustration" class="hero-img">
             </div>
         </section>
-        <hr>
+        <hr class="gradient">
         <section class="secondSection" id="about">
             <p class="h2">About Me</p>
             <div class="inf">
@@ -322,11 +322,11 @@
     <script>
         var typed = new Typed('#element', {
             strings: [
-                'Computer Science Student',
-                'Full Stack Web Developer',
-                'Web Designer',
-                'UI/UX Enthusiast',
-                'SQL Specialist',
+                'Computer Science Graduate.',
+                'Full Stack Web Developer.',
+                'Web Designer.',
+                'UI/UX Enthusiast.',
+                'SQL Specialist.',
                 'Spring Boot Developer.'
             ],
             typeSpeed: 40,
@@ -337,9 +337,14 @@
         });
     </script>
     <script>
-const burger = document.querySelector('.burger');
+        const burger = document.querySelector('.burger');
 const navig = document.querySelector('.navig');
 const navul = document.querySelector('.navul');
+
+// Ensure mobile nav is closed on page load
+navig.classList.remove('h-nav-resp');
+navul.classList.remove('v-class-resp');
+
 burger.addEventListener('click', () => {
     navig.classList.toggle('h-nav-resp');  // toggle burger animation
     navul.classList.toggle('v-class-resp'); // show/hide menu
