@@ -1,220 +1,273 @@
-body {
-    background-color: light gray (#f5f5f5);
-    color: white;
-    font-family: 'Poppins', sans-serif;
-}
+/* ===== Phone.css (Responsive Overrides) ===== */
 
-@media screen and (max-width: 768px) {
+/* General adjustments for small screens */
+@media (max-width: 768px) {
+    /* ===== Navigation ===== */
+    .nav-section {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 16px;
+        height: auto;
+    }
 
     .navul {
-    flex-direction: column;
-    position: absolute;
-    margin: 0;
-    left: 0;
-}
+        flex-direction: column;
+        width: 100%;
+        margin-left: 0;
+    }
 
-.navLink {
-    font-size: 22px;
-}
+    .navLink {
+        font-size: 16px;
+        padding: 8px 0;
+    }
 
-.navig {
-    height: 322px;
-    flex-direction: column;
-    transition: all 0.1s ease-out;
-}
+    .burger {
+        display: block;
+    }
 
-.profilePic {
-    width: 50px;
-}
+    .line {
+        width: 25px;
+        height: 3px;
+    }
 
-.burger {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
+    .profilePic {
+        width: 44px;
+        height: 44px;
+    }
 
-.menu {
-    width: 70px;
-    height: 30px;
-}
-
-.h-nav-resp {
-    height: 80px;
-}
-
-.v-class-resp {
-    display: none;
-}
-
-    .left {
-        font-size: 1.2rem;
-        margin: 0 20px;
+    /* ===== Home Section ===== */
+    .firstSection {
+        flex-direction: column;
+        padding: 80px 16px 40px 16px;
         text-align: center;
     }
 
-    .firstSection {
-        flex-direction: column;
-        margin: 50px 0;
+    .leftSection {
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 30px;
     }
 
-    .firstSection>div,
-    .left div {
-        width: 90%;
-        margin: 20px 0;
+    .leftSection h1 {
+        font-size: 2rem;
     }
 
-    .rightSection img {
-        width: 90%;
-        margin: 20px 0;
+    .hero-subtitle {
+        font-size: 1.2rem;
     }
+
+    .typed-text,
+    #element {
+        font-size: 1rem;
+    }
+
+    .hero-buttons .button {
+        padding: 10px 24px;
+        font-size: 0.95rem;
+        margin-right: 12px;
+    }
+
+    .rightSection {
+        width: 100%;
+    }
+
+    .hero-img {
+        width: 180px;
+        height: 180px;
+    }
+
+    /* ===== Section Dividers ===== */
     main hr {
-    border: 0;
-    background: #5c58b3;
-    height: 1.5px;
-    width: 300px;
-    margin: 150px 50px;
-}
+        margin: 60px 16px;
+    }
+
+    /* ===== About Section ===== */
+    .secondSection {
+        margin: 80px 16px 40px 16px;
+        padding: 32px 20px;
+    }
 
     .secondSection .h2 {
-        font-size: 40px;
-        margin-top: 40px;
+        font-size: 2rem;
     }
 
     .secondSection .inf {
         font-size: 1rem;
-        margin: 0 20px;
     }
 
-    .fourthsection {
-        max-width: 95vw;
-        margin: 20px auto;
-        height: auto;
-        padding: 20px;
+    .secondSection .button {
+        padding: 10px 24px;
+        font-size: 0.95rem;
     }
 
-    .fourthsection .h3 {
-        font-size: 40px;
-        margin-top: 20px;
-    }
-
-    .fifthsection h1 {
-        font-size: 2rem;
-        margin: 20px auto;
-        text-align: center;
-    }
-    .fourthsection .var1{
-    padding-right: 45px;
-    color: rgb(115, 130, 145);
-    text-align: left;
-    margin: 5px 10px;
-    }
-    .fourthsection .dec1 {
-        padding-right: 80px;
-        font-size: 15px;
-        margin: 5px -10px;
-    }
-    .text-with-vertical-line::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 2px;
-        height: 883%;
-        background-color: #ededed;
-    }
-
-    .fourthsection .da1 {
-        padding-right: 0px;
-        padding-left: 50px;
-        font-size: 20px;
-        text-align: left;
-        font-size: large;
-        margin: 10px -45px;
-    }
-
-    .edu-head {
-        font-size: 50px;
-        text-align: center;
-        margin-top: 75px;
-    }
-    .edu-card {
-        width: 90%;
-        margin: 10px 0;
-        padding: 10px;
-    }
-    .thirdsection .h2{
-        font-size: 37px;
-    }
+    /* ===== Skills Section ===== */
     .thirdSection {
-            margin: 50px 35px;
-            text-align: center;
-            height: auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-        }
+        margin: 80px 16px 40px 16px;
+        padding: 32px 20px;
     }
 
-    .projects .h5 {
-        font-size: 60px;
-        text-align: center;
-        margin: 0px 50px;
+    .h5 {
+        font-size: 2rem;
+        margin-bottom: 24px;
     }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 16px;
+    }
+
+    .skill-card {
+        padding: 20px 12px;
+    }
+
+    .skill-card i {
+        font-size: 1.7rem;
+    }
+
+    .skill-title {
+        font-size: 1rem;
+    }
+
+    .skill-desc {
+        font-size: 0.9rem;
+    }
+
+    /* ===== Projects Section ===== */
+    .projects-section {
+        margin: 60px 16px 40px 16px;
+        padding: 32px 16px;
+    }
+
+    .projects-head {
+        font-size: 2rem;
+        margin-bottom: 36px;
+    }
+
     .projects {
-        flex-direction: column;
-        align-items: center;
-        margin: 20px;
-        gap: 30px;
+        gap: 20px;
     }
 
     .project {
-        width: 90%;
-        padding: 15px;
+        padding: 20px 16px;
+    }
+
+    .project h2 {
+        font-size: 1.2rem;
+    }
+
+    .project p {
+        font-size: 0.95rem;
+    }
+
+    .view-more {
+        padding: 10px 24px;
+        font-size: 0.95rem;
+    }
+
+    /* ===== Contact Section ===== */
+    .contact-section {
+        margin: 60px 16px 40px 16px;
+        padding: 32px 20px;
     }
 
     .contact-head {
-        font-size: 50px;
-        margin: 20px 20px;
-    }
-
-    .form-container {
-        max-width: 90%;
-        padding: 10px;
-    }
-
-    .form-group i {
-        left: 15px;
-        font-size: 1rem;
-        margin: 0 12px;
+        font-size: 2rem;
     }
 
     .contact-input {
-        padding: 10px 10px 10px 30px;
+        padding: 10px 12px;
+        font-size: 0.95rem;
     }
 
-   
+    .contact-submit-btn {
+        padding: 10px 24px;
+        font-size: 0.95rem;
+    }
+
+    /* ===== Experience & Education ===== */
+    .fourthsection,
+    .edu-section {
+        margin: 60px 16px 40px 16px;
+        padding: 32px 20px;
+    }
+
+    .fourthsection .h3,
+    .edu-head {
+        font-size: 2rem;
+    }
+
+    .var1, .dec1, .da1, .da2 {
+        font-size: 0.95rem;
+    }
+
+    .edu-card {
+        padding: 24px 20px;
+    }
+
+    .inst-name {
+        font-size: 1.1rem;
+    }
+
+    .edu-qualification {
+        font-size: 1rem;
+    }
+
+    /* ===== Footer ===== */
     .footer {
-        padding: 10px;
-        flex-direction: column;
-        height: auto;
+        padding: 12px 0 8px 0;
     }
 
-    .footer-navul {
-        flex-direction: column;
-        align-items: center;
+    .footer-head {
+        font-size: 0.9rem;
     }
 
     .footer-navLink {
-        padding: 0px;
+        font-size: 0.85rem;
+        padding: 2px 6px;
     }
 
-    .footer-navItem {
-        margin: 5px 0;
+    .social-icons {
+        font-size: 0.9rem;
+        width: 28px;
+        height: 28px;
     }
 
-    .social-links {
-        margin: 10px 0;
+    #rToTop {
+        width: 44px;
+        height: 44px;
+        font-size: 1.3rem;
+        bottom: 20px;
+        right: 20px;
     }
+}
+/* Additional tweaks for very small screens */
+@media (max-width: 480px) {
+    .hero-img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .typed-text,
+    #element {
+        font-size: 0.9rem;
+    }
+
+    .skill-card {
+        padding: 16px 10px;
+    }
+
+    .skill-card i {
+        font-size: 1.5rem;
+    }
+
+    .project h2 {
+        font-size: 1.1rem;
+    }
+
+    .project p {
+        font-size: 0.9rem;
+    }
+}
+/* End of Phone.css */
+/* ===== Phone.css (Responsive Overrides) ===== */
+/* General adjustments for small screens */
