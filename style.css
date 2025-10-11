@@ -240,11 +240,14 @@ main hr {
 }
 
 .secondSection .h2 {
-    font-size: 2.5rem;
-    color: #111213;
-    font-weight: 700;
-    margin-bottom: 18px;
+    font-size: 2.6rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 50px;
     letter-spacing: 1px;
+    background: linear-gradient(90deg, #080b17 40%, #a1c4fd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .secondSection .inf {
@@ -289,11 +292,14 @@ main hr {
 }
 
 .fourthsection .h3 {
-    font-size: 2.5rem;
-    color: #0a0b0b;
-    margin-bottom: 18px;
-    font-weight: 700;
+    font-size: 2.6rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 50px;
     letter-spacing: 1px;
+    background: linear-gradient(90deg, #080b17 40%, #a1c4fd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .fourthsection hr {
@@ -399,12 +405,14 @@ main hr {
 
 
 .edu-head {
-    font-size: 2.5rem;
-    color: #0e0e0f;
+    font-size: 2.6rem;
     font-weight: 800;
-    margin-bottom: 20px;
-    text-align: left;
+    text-align: center;
+    margin-bottom: 50px;
     letter-spacing: 1px;
+    background: linear-gradient(90deg, #080b17 40%, #a1c4fd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .edu-card {
@@ -482,11 +490,14 @@ main hr {
 }
 
 .h5 {
-    font-size: 2.5rem;
-    color: #141518;
+    font-size: 2.6rem;
     font-weight: 800;
-    margin-bottom: 28px;
-    letter-spacing: 1.0px;
+    text-align: center;
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, #080b17 40%, #a1c4fd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .skills-grid {
@@ -562,19 +573,126 @@ main hr {
     }
 }
 
-/* ===== Projects Section (Refined Design) ===== */
-.projects-section {
+    /* ===== Projects Section (Refined Design) ===== */
+    .projects-section {
+        max-width: 1100px;
+        margin: 60px auto 60px auto;  /* Reduced top margin */
+        padding: 40px 24px;
+        background: #f9f9ff;
+        border-radius: 22px;
+        box-shadow: 0 8px 30px rgba(74, 108, 247, 0.05);
+        position: relative;
+    }
+
+    /* Subtle divider above */
+    .projects-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 60%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #4A6CF7, transparent);
+        transform: translateX(-50%);
+        opacity: 0.4;
+        border-radius: 50%;
+    }
+
+    .projects-head {
+        font-size: 2.6rem;
+        font-weight: 800;
+        text-align: center;
+        margin-bottom: 50px;
+        letter-spacing: 1px;
+        background: linear-gradient(90deg, #080b17 40%, #a1c4fd 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    /* Grid layout */
+    .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 32px;
+    }
+
+    /* Project cards */
+    .project {
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: 0 4px 18px rgba(74, 108, 247, 0.12);
+        padding: 32px 26px;
+        display: flex;
+        flex-direction: column;
+        transition: 0.35s ease;
+        min-height: 260px;
+        border: 1px solid rgba(74, 108, 247, 0.06);
+    }
+
+    .project:hover {
+        box-shadow: 0 8px 28px rgba(74, 108, 247, 0.18);
+        transform: translateY(-5px);
+    }
+
+    .project h2 {
+        font-size: 1.35rem;
+        color: #141518;
+        margin-bottom: 10px;
+        font-weight: 700;
+    }
+
+    .project p {
+        color: #555;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .view-more {
+        background: linear-gradient(90deg, #4A6CF7 60%, #a1c4fd 100%);
+        color: #fff;
+        padding: 12px 30px;
+        border-radius: 25px;
+        border: none;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        align-self: flex-start;
+        text-decoration: none;
+        transition: transform 0.3s, background 0.3s;
+    }
+
+    .view-more:hover {
+        transform: scale(1.06);
+        background: linear-gradient(90deg, #3b5ad8 50%, #4A6CF7 100%);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 700px) {
+        .projects-head {
+            font-size: 2rem;
+            margin-bottom: 36px;
+        }
+        .project {
+            padding: 24px 18px;
+        }
+    }
+
+
+    /* ===== Certifications Section ===== */
+.certifications-section {
     max-width: 1100px;
-    margin: 60px auto 60px auto;  /* Reduced top margin */
+    margin: 60px auto;
     padding: 40px 24px;
     background: #f9f9ff;
     border-radius: 22px;
     box-shadow: 0 8px 30px rgba(74, 108, 247, 0.05);
     position: relative;
+    font-family: 'Poppins', sans-serif;
 }
 
 /* Subtle divider above */
-.projects-section::before {
+.certifications-section::before {
     content: "";
     position: absolute;
     top: 0;
@@ -587,7 +705,7 @@ main hr {
     border-radius: 50%;
 }
 
-.projects-head {
+.certifications-head {
     font-size: 2.6rem;
     font-weight: 800;
     text-align: center;
@@ -598,74 +716,92 @@ main hr {
     -webkit-text-fill-color: transparent;
 }
 
-/* Grid layout */
-.projects {
+/* Grid layout for certificates */
+.certifications {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 32px;
 }
 
-/* Project cards */
-.project {
+/* Individual certificate card */
+.certificate {
     background: #fff;
     border-radius: 18px;
     box-shadow: 0 4px 18px rgba(74, 108, 247, 0.12);
     padding: 32px 26px;
     display: flex;
     flex-direction: column;
-    transition: 0.35s ease;
     min-height: 260px;
     border: 1px solid rgba(74, 108, 247, 0.06);
 }
 
-.project:hover {
-    box-shadow: 0 8px 28px rgba(74, 108, 247, 0.18);
-    transform: translateY(-5px);
-}
-
-.project h2 {
+.certificate h3 {
     font-size: 1.35rem;
     color: #141518;
     margin-bottom: 10px;
     font-weight: 700;
 }
 
-.project p {
+.certificate p {
     color: #555;
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 20px;
 }
 
-.view-more {
+/* View Credential button */
+.view-credential {
+    display: inline-block;
+    text-align: center;
     background: linear-gradient(90deg, #4A6CF7 60%, #a1c4fd 100%);
     color: #fff;
-    padding: 12px 30px;
+    padding: 12px 25px;
     border-radius: 25px;
-    border: none;
     font-weight: 600;
     font-size: 1rem;
-    cursor: pointer;
-    align-self: flex-start;
     text-decoration: none;
-    transition: transform 0.3s, background 0.3s;
+    cursor: pointer;
+    transition: transform 0.1s ease, background 0.2s ease;
 }
 
-.view-more:hover {
-    transform: scale(1.06);
+/* Click effect only */
+.view-credential:active {
+    transform: scale(0.97);
     background: linear-gradient(90deg, #3b5ad8 50%, #4A6CF7 100%);
 }
 
 /* Responsive adjustments */
 @media (max-width: 700px) {
-    .projects-head {
+    .certifications-head {
         font-size: 2rem;
         margin-bottom: 36px;
     }
-    .project {
+    .certificate {
         padding: 24px 18px;
     }
 }
+/* Hidden credential details */
+.certificate .credential-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    opacity: 0;
+    margin-top: 0;
+}
+
+/* Show on click */
+.certificate.show-credential .credential-details {
+    max-height: 200px; /* adjust as needed */
+    opacity: 1;
+    margin-top: 15px;
+}
+
+/* Optional: smooth button click effect */
+.view-credential:active {
+    transform: scale(0.97);
+}
+
+
 
 
 /* ===== Contact Section ===== */
@@ -681,12 +817,14 @@ main hr {
 }
 
 .contact-head {
-    text-align: left;
-    font-size: 2.5rem;
-    color: #141518;
+    font-size: 2.6rem;
     font-weight: 800;
-    margin-bottom: 28px;
+    text-align: center;
+    margin-bottom: 50px;
     letter-spacing: 1px;
+    background: linear-gradient(360deg, #080b17 40%, #a1c4fd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .form-container {

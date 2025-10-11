@@ -51,7 +51,8 @@
                 </div>
             </div>
             <div class="rightSection">
-                <img src="bg1.png" alt="Rohan M S profile illustration" class="hero-img">
+                <img src="bg1.png"
+                    alt="Rohan M S profile illustration" class="hero-img">
             </div>
         </section>
         <hr>
@@ -101,7 +102,7 @@
                     machine learning, data preprocessing, and model development using Python and TensorFlow on
                     real-world predictive analytics and computer vision projects.
 
-                    <a href="4RA21CS070.pdf" target="_blank" class="button">Open Certificate</a>
+                    <a href="Rooman.pdf" target="_blank" class="button">Open Certificate</a>
         </section>
     </main>
 
@@ -233,6 +234,38 @@
         </div>
     </section>
 
+    <section class="certifications-section" id="certifications">
+  <h2 class="certifications-head">Certifications</h2>
+  <div class="certifications">
+    <div class="certificate">
+      <h3>AI - Machine Learning Engineer</h3>
+      <p>Issued by Rooman Technologies – Completed a comprehensive course on core ML concepts and algorithms.</p>
+      <a href="https://online.rooman.com/certificate/5dedb42b34e50082065a783265ce28a8" class="view-credential" target="_blank">View Credential</a>
+    </div>
+    <div class="certificate">
+      <h3>Language Understanding with Models: Elevating NLP Capabilities </h3>
+      <p>Issued by IBM – Focused on data analysis, visualization, and Python programming.</p>
+      <a href="https://qr.me-qr.com/mobile/pdf/1d1c891e-3422-4054-a4b7-e88ba37b5cbd" class="view-credential" target="_blank">View Credential</a>
+    </div>
+    <div class="certificate">
+      <h3>Infosys Foundation </h3>
+      <p>Issued by Infosys – Explored Full Stack Web Development With The Python.</p>
+      <a href="G-2024-G4044-0067" class="view-credential" target="_blank">View Credential</a>
+    </div>
+    <div class="certificate">
+      <h3>Wadhwani Foundation </h3>
+      <p>Issued by Wadhwani - Developed strong communication and interpersonal skills through collaboration</p>
+      <a href="https://web.certificate.wfglobal.org/en/certificate?certificateId=673492b8d74d60ffbbb099cf" class="view-credential" target="_blank">View Credential</a>
+    </div>
+    <div class="certificate">
+      <h3>Varcons Technologies Pvt Ltd </h3>
+      <p>Issued by Varcons – Gained practical insights into Full stack development with HTML, CSS.</p>
+      <a href="bit.ly/3RI1YVU" class="view-credential" target="_blank">View Credential</a>
+    </div>
+  </div>
+</section>
+
+
 
     <section class="contact-section" id="contact-me">
         <h2 class="contact-head">Contact Me</h2>
@@ -302,16 +335,25 @@
             showCursor: true,
             cursorChar: '|'
         });
-
-        burger = document.querySelector('.burger');
-        navig = document.querySelector('.navig');
-        navul = document.querySelector('.navul');
-
-        burger.addEventListener('click', () => {
-            navig.classList.toggle('h-nav-resp');
-            navul.classList.toggle('v-class-resp');
-        });
     </script>
+    <script>
+const burger = document.querySelector('.burger');
+const navig = document.querySelector('.navig');
+const navul = document.querySelector('.navul');
+burger.addEventListener('click', () => {
+    navig.classList.toggle('h-nav-resp');  // toggle burger animation
+    navul.classList.toggle('v-class-resp'); // show/hide menu
+});
+
+// Close menu when a link is clicked
+document.querySelectorAll('.navLink').forEach(link => {
+    link.addEventListener('click', () => {
+        navig.classList.remove('h-nav-resp');
+        navul.classList.remove('v-class-resp');
+    });
+});
+</script>
+
 
     <script>
         const observer = new IntersectionObserver((entries) => {
@@ -348,25 +390,6 @@
             document.documentElement.scrollTop = 0;
         }
 
-    </script>
-    <script>
-        const burger = document.querySelector('.burger');
-        const navul = document.querySelector('.navul');
-        const navLinks = document.querySelectorAll('.navLink');
-
-        // Toggle mobile menu
-        burger.addEventListener('click', () => {
-            navul.classList.toggle('active');
-            burger.classList.toggle('open');
-        });
-
-        // Close menu when clicking a link
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navul.classList.remove('active');
-                burger.classList.remove('open');
-            });
-        });
     </script>
 
     <script>
