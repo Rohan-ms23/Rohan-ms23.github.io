@@ -317,25 +317,65 @@
         </div>
     </section>
 
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<h2 id="element"></h2>
+<script>
+const typedOptions = {
+  strings: [
+    'Computer Science Graduate.',
+    'Full Stack Web Developer.',
+    'Web Designer.',
+    'UI/UX Enthusiast.',
+    'SQL Specialist.',
+    'Spring Boot Developer.'
+  ],
+  typeSpeed: 40,
+  backSpeed: 20,
+  loop: false,
+  showCursor: true,
+  cursorChar: '|'
+};
 
-    <script>
-        var typed = new Typed('#element', {
-            strings: [
-                'Computer Science Graduate.',
-                'Full Stack Web Developer.',
-                'Web Designer.',
-                'UI/UX Enthusiast.',
-                'SQL Specialist.',
-                'Spring Boot Developer.'
-            ],
-            typeSpeed: 40,
-            backSpeed: 20,
-            loop: true,
-            showCursor: true,
-            cursorChar: '|'
-        });
-    </script>
+let typedInstance;
+
+if (typeof observer !== 'undefined') {
+  observer.observe(document.querySelector('#element'));
+  const originalCallback = observer.callback || observer._callback || (() => {});
+  const newCallback = (entries) => {
+    entries.forEach(entry => {
+      if (entry.target.id === 'element') {
+        if (entry.isIntersecting) {
+          if (!typedInstance) typedInstance = new Typed('#element', typedOptions);
+        } else {
+          if (typedInstance) {
+            typedInstance.destroy();
+            typedInstance = null;
+            document.querySelector('#element').textContent = '';
+          }
+        }
+      }
+    });
+    if (typeof originalCallback === 'function') originalCallback(entries);
+  };
+  observer.callback = newCallback;
+} else {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && entry.target.id === 'element') {
+        if (!typedInstance) typedInstance = new Typed('#element', typedOptions);
+      } else if (entry.target.id === 'element') {
+        if (typedInstance) {
+          typedInstance.destroy();
+          typedInstance = null;
+          document.querySelector('#element').textContent = '';
+        }
+      }
+    });
+  }, { threshold: 0.3 });
+  observer.observe(document.querySelector('#element'));
+}
+</script>
+
     <script>
         const burger = document.querySelector('.burger');
 const navig = document.querySelector('.navig');
