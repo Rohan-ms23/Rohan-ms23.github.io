@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Doctor Planet | Professional Plant Diagnostics</title>
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         :root {
@@ -38,6 +39,7 @@
             padding: 20px;
         }
 
+        /* Container & Layout */
         .app-shell {
             width: 100%;
             max-width: 480px;
@@ -66,10 +68,12 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* Typography */
         h1 { font-size: 28px; font-weight: 800; color: var(--primary); margin: 0 0 8px 0; display: flex; align-items: center; gap: 10px; }
         h2 { font-size: 20px; margin-bottom: 16px; color: var(--primary); }
         p.subtitle { font-size: 15px; color: #666; margin-bottom: 30px; line-height: 1.5; }
 
+        /* Form Elements */
         .input-group { margin-bottom: 20px; position: relative; }
         .input-group i { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #999; width: 18px; }
         input {
@@ -83,6 +87,7 @@
         }
         input:focus { outline: none; border-color: var(--primary-light); box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1); }
 
+        /* Buttons */
         button {
             width: 100%;
             padding: 16px;
@@ -103,6 +108,7 @@
         .btn-ghost { background: transparent; color: var(--primary); font-size: 14px; margin-top: 10px; }
         .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); margin-top: 10px; }
 
+        /* Upload Area */
         .upload-zone {
             flex: 1;
             border: 2px dashed #ccc;
@@ -124,6 +130,7 @@
         .upload-placeholder { text-align: center; padding: 20px; z-index: 1; }
         .upload-placeholder i { color: var(--primary-light); margin-bottom: 12px; }
 
+        /* Scanning Animation */
         .scanner {
             position: absolute;
             top: 0;
@@ -142,6 +149,7 @@
             100% { top: 0; }
         }
 
+        /* Results Display */
         .result-card {
             background: white;
             border-radius: var(--radius-md);
@@ -150,7 +158,6 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
             margin-bottom: 20px;
         }
-
         .status-badge {
             display: inline-flex;
             align-items: center;
@@ -162,11 +169,11 @@
             text-transform: uppercase;
             margin-bottom: 10px;
         }
-
         .status-success { background: #e8f5e9; color: #2e7d32; }
         .status-warning { background: #fff3e0; color: #ef6c00; }
         .status-danger { background: #ffebee; color: #c62828; }
 
+        /* Notifications */
         #toast {
             position: fixed;
             bottom: 30px;
@@ -182,12 +189,12 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.2);
         }
 
+        /* History Tab */
         .history-list {
             margin-top: 20px;
             max-height: 200px;
             overflow-y: auto;
         }
-
         .history-item {
             display: flex;
             align-items: center;
@@ -196,16 +203,11 @@
             border-bottom: 1px solid #eee;
             font-size: 13px;
         }
-
-        .history-thumb {
-            width: 40px;
-            height: 40px;
-            border-radius: 6px;
-            object-fit: cover;
-        }
+        .history-thumb { width: 40px; height: 40px; border-radius: 6px; object-fit: cover; }
 
         .hidden { display: none !important; }
-
+        
+        /* Footer */
         footer {
             padding: 20px;
             text-align: center;
@@ -213,13 +215,235 @@
             color: #999;
             background: rgba(0,0,0,0.02);
         }
-
-        .spin { animation: rotate 2s linear infinite; }
-        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
     </style>
 </head>
-
 <body>
-    <!-- Body content unchanged (already no inline comments affecting logic) -->
+
+<div class="app-shell">
+    
+    <!-- Screen: Auth -->
+    <div id="screen-auth" class="screen">
+        <h1><i data-lucide="leaf"></i> Doctor Planet</h1>
+        <p class="subtitle">Empowering farmers with instant AI-driven crop diagnostics and treatment plans.</p>
+        
+        <div id="auth-login">
+            <div class="input-group">
+                <i data-lucide="mail"></i>
+                <input type="email" id="login-email" placeholder="Email Address" value="farmer@agri.com">
+            </div>
+            <div class="input-group">
+                <i data-lucide="lock"></i>
+                <input type="password" id="login-pass" placeholder="Password" value="password">
+            </div>
+            <button class="btn-primary" onclick="handleLogin()">
+                Sign In <i data-lucide="arrow-right"></i>
+            </button>
+            <button class="btn-ghost" onclick="toggleAuth(true)">Create New Account</button>
+        </div>
+
+        <div id="auth-signup" class="hidden">
+            <div class="input-group">
+                <i data-lucide="user"></i>
+                <input type="text" placeholder="Full Name">
+            </div>
+            <div class="input-group">
+                <i data-lucide="mail"></i>
+                <input type="email" placeholder="Email Address">
+            </div>
+            <div class="input-group">
+                <i data-lucide="lock"></i>
+                <input type="password" placeholder="Password">
+            </div>
+            <button class="btn-primary" onclick="toggleAuth(false)">Register Now</button>
+            <button class="btn-ghost" onclick="toggleAuth(false)">Back to Login</button>
+        </div>
+    </div>
+
+    <!-- Screen: Dashboard -->
+    <div id="screen-main" class="screen hidden">
+        <div style="display:flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h2 style="margin:0">Diagnosis Lab</h2>
+            <button class="btn-ghost" style="width:auto; padding:5px" onclick="handleLogout()">
+                <i data-lucide="log-out"></i>
+            </button>
+        </div>
+
+        <div class="upload-zone" id="drop-zone" onclick="document.getElementById('file-input').click()">
+            <div class="scanner" id="scanner-line"></div>
+            <div class="upload-placeholder" id="placeholder">
+                <i data-lucide="camera" style="width: 48px; height: 48px;"></i>
+                <p><strong>Click to Capture or Upload</strong><br><span style="font-size:12px">Supports JPG, PNG</span></p>
+            </div>
+            <img id="img-preview" class="hidden">
+            <input type="file" id="file-input" accept="image/*" hidden onchange="handleFile(event)">
+        </div>
+
+        <div id="analysis-controls">
+            <button id="btn-analyze" class="btn-primary" onclick="startAnalysis()" disabled>
+                <i data-lucide="zap"></i> Start AI Diagnosis
+            </button>
+            <button class="btn-outline" onclick="resetUI()">
+                <i data-lucide="refresh-cw"></i> Clear
+            </button>
+        </div>
+
+        <!-- Result Section -->
+        <div id="result-view" class="hidden" style="margin-top: 24px;">
+            <div class="result-card">
+                <div id="res-badge" class="status-badge"></div>
+                <h3 id="res-title" style="margin: 0 0 10px 0; color: var(--primary);"></h3>
+                <div style="font-size: 14px; line-height: 1.6;">
+                    <p><strong>AI Confidence:</strong> <span id="res-conf"></span></p>
+                    <p><strong>Prescription:</strong><br><span id="res-remedy" style="color:#555"></span></p>
+                </div>
+            </div>
+            <button class="btn-outline" onclick="resetUI()">New Diagnosis</button>
+        </div>
+
+        <div id="history-section">
+            <h4 style="margin: 24px 0 10px 0; font-size: 14px; color: #888;">Recent Activity</h4>
+            <div class="history-list" id="history-list">
+                <p style="text-align:center; color:#ccc; font-size:12px; margin-top:20px;">No recent history</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        Doctor Planet v2.4 Pro | Precise Agri-AI
+    </footer>
+</div>
+
+<div id="toast">Message here</div>
+
+<script>
+    // Mock Database
+    const DISEASE_DB = [
+        { name: "Healthy Foliage", conf: "99.2%", type: "success", msg: "Plant is thriving. Continue standard nitrogen-rich fertilization and 1-inch weekly watering.", icon: "check-circle" },
+        { name: "Potato Late Blight", conf: "94.5%", type: "danger", msg: "High threat detected. Destroy infected plants immediately. Apply Chlorothalonil or Mancozeb to surrounding area.", icon: "alert-triangle" },
+        { name: "Powdery Mildew", conf: "88.1%", type: "warning", msg: "Fungal infection detected. Improve air circulation and apply potassium bicarbonate or neem oil spray.", icon: "info" },
+        { name: "Nutrient Deficiency (Iron)", conf: "82.4%", type: "warning", msg: "Chlorosis observed. Add chelated iron to the soil and check pH levels (ideal is 6.0-7.0).", icon: "droplet" }
+    ];
+
+    let historyData = [];
+
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    function showToast(msg) {
+        const t = document.getElementById('toast');
+        t.innerText = msg;
+        t.style.display = 'block';
+        setTimeout(() => t.style.display = 'none', 3000);
+    }
+
+    function toggleAuth(showSignup) {
+        document.getElementById('auth-login').classList.toggle('hidden', showSignup);
+        document.getElementById('auth-signup').classList.toggle('hidden', !showSignup);
+    }
+
+    function handleLogin() {
+        const email = document.getElementById('login-email').value;
+        if(!email.includes('@')) return showToast("Please enter a valid email");
+        
+        document.getElementById('screen-auth').classList.add('hidden');
+        document.getElementById('screen-main').classList.remove('hidden');
+        showToast("Welcome back, Chief Farmer!");
+    }
+
+    function handleLogout() {
+        document.getElementById('screen-main').classList.add('hidden');
+        document.getElementById('screen-auth').classList.remove('hidden');
+        resetUI();
+    }
+
+    function handleFile(e) {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            const img = document.getElementById('img-preview');
+            img.src = event.target.result;
+            img.classList.remove('hidden');
+            document.getElementById('placeholder').classList.add('hidden');
+            document.getElementById('btn-analyze').disabled = false;
+        }
+        reader.readAsDataURL(file);
+    }
+
+    function startAnalysis() {
+        const btn = document.getElementById('btn-analyze');
+        const scanner = document.getElementById('scanner-line');
+        
+        btn.disabled = true;
+        btn.innerHTML = `<i data-lucide="loader-2" class="spin"></i> Processing...`;
+        lucide.createIcons();
+        scanner.style.display = 'block';
+
+        // Simulate AI Latency
+        setTimeout(() => {
+            const data = DISEASE_DB[Math.floor(Math.random() * DISEASE_DB.length)];
+            displayResult(data);
+            addToHistory(data);
+            
+            scanner.style.display = 'none';
+            btn.innerHTML = `<i data-lucide="zap"></i> Start AI Diagnosis`;
+            lucide.createIcons();
+        }, 2500);
+    }
+
+    function displayResult(data) {
+        document.getElementById('analysis-controls').classList.add('hidden');
+        const view = document.getElementById('result-view');
+        view.classList.remove('hidden');
+
+        const badge = document.getElementById('res-badge');
+        badge.className = `status-badge status-${data.type}`;
+        badge.innerHTML = `<i data-lucide="${data.icon}" style="width:14px"></i> ${data.type}`;
+        
+        document.getElementById('res-title').innerText = data.name;
+        document.getElementById('res-conf').innerText = data.conf;
+        document.getElementById('res-remedy').innerText = data.msg;
+        lucide.createIcons();
+    }
+
+    function addToHistory(data) {
+        const list = document.getElementById('history-list');
+        const img = document.getElementById('img-preview').src;
+        
+        const item = document.createElement('div');
+        item.className = 'history-item';
+        item.innerHTML = `
+            <img src="${img}" class="history-thumb">
+            <div style="flex:1">
+                <div style="font-weight:600">${data.name}</div>
+                <div style="font-size:11px; color:#888">${new Date().toLocaleTimeString()} • ${data.conf} match</div>
+            </div>
+            <i data-lucide="chevron-right" style="width:14px; color:#ccc"></i>
+        `;
+        
+        if(list.querySelector('p')) list.innerHTML = '';
+        list.prepend(item);
+        lucide.createIcons();
+    }
+
+    function resetUI() {
+        document.getElementById('file-input').value = '';
+        document.getElementById('img-preview').src = '';
+        document.getElementById('img-preview').classList.add('hidden');
+        document.getElementById('placeholder').classList.remove('hidden');
+        document.getElementById('btn-analyze').disabled = true;
+        document.getElementById('result-view').classList.add('hidden');
+        document.getElementById('analysis-controls').classList.remove('hidden');
+        document.getElementById('scanner-line').style.display = 'none';
+    }
+</script>
+
+<style>
+    /* Utility Animation */
+    .spin { animation: rotate 2s linear infinite; }
+    @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+</style>
+
 </body>
-</html>
+                    </html>
