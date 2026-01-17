@@ -1,449 +1,460 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Doctor Planet | Professional Plant Diagnostics</title>
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        :root {
-            --primary: #1b5e20;
-            --primary-light: #4caf50;
-            --secondary: #2e7d32;
-            --accent: #8bc34a;
-            --danger: #d32f2f;
-            --warning: #ffa000;
-            --info: #0288d1;
-            --bg-gradient: linear-gradient(135deg, #f1f8e9 0%, #dcedc8 100%);
-            --glass: rgba(255, 255, 255, 0.9);
-            --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            --radius-lg: 24px;
-            --radius-md: 12px;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohan M S - Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="phone.css" media="only screen and (max-width: 768px)">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-        * {
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: var(--bg-gradient);
-            margin: 0;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #2c3e50;
-            padding: 20px;
-        }
-
-        /* Container & Layout */
-        .app-shell {
-            width: 100%;
-            max-width: 480px;
-            background: var(--glass);
-            backdrop-filter: blur(10px);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow);
-            overflow: hidden;
-            position: relative;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            display: flex;
-            flex-direction: column;
-            min-height: 700px;
-        }
-
-        .screen {
-            padding: 32px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Typography */
-        h1 { font-size: 28px; font-weight: 800; color: var(--primary); margin: 0 0 8px 0; display: flex; align-items: center; gap: 10px; }
-        h2 { font-size: 20px; margin-bottom: 16px; color: var(--primary); }
-        p.subtitle { font-size: 15px; color: #666; margin-bottom: 30px; line-height: 1.5; }
-
-        /* Form Elements */
-        .input-group { margin-bottom: 20px; position: relative; }
-        .input-group i { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #999; width: 18px; }
-        input {
-            width: 100%;
-            padding: 14px 14px 14px 44px;
-            border-radius: var(--radius-md);
-            border: 1px solid #ddd;
-            background: white;
-            font-size: 15px;
-            transition: all 0.2s;
-        }
-        input:focus { outline: none; border-color: var(--primary-light); box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1); }
-
-        /* Buttons */
-        button {
-            width: 100%;
-            padding: 16px;
-            border: none;
-            border-radius: var(--radius-md);
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.1s, opacity 0.2s, background 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-        button:active { transform: scale(0.98); }
-        .btn-primary { background: var(--primary); color: white; }
-        .btn-primary:hover { background: #134416; }
-        .btn-ghost { background: transparent; color: var(--primary); font-size: 14px; margin-top: 10px; }
-        .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); margin-top: 10px; }
-
-        /* Upload Area */
-        .upload-zone {
-            flex: 1;
-            border: 2px dashed #ccc;
-            border-radius: var(--radius-md);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: rgba(0,0,0,0.02);
-            cursor: pointer;
-            margin-bottom: 24px;
-            min-height: 200px;
-            position: relative;
-            overflow: hidden;
-            transition: border-color 0.3s;
-        }
-        .upload-zone:hover { border-color: var(--primary-light); background: rgba(76, 175, 80, 0.05); }
-        .upload-zone img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; }
-        .upload-placeholder { text-align: center; padding: 20px; z-index: 1; }
-        .upload-placeholder i { color: var(--primary-light); margin-bottom: 12px; }
-
-        /* Scanning Animation */
-        .scanner {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--accent);
-            box-shadow: 0 0 15px var(--accent);
-            z-index: 10;
-            animation: scan 2s infinite ease-in-out;
-            display: none;
-        }
-        @keyframes scan {
-            0% { top: 0; }
-            50% { top: 100%; }
-            100% { top: 0; }
-        }
-
-        /* Results Display */
-        .result-card {
-            background: white;
-            border-radius: var(--radius-md);
-            padding: 20px;
-            border-left: 6px solid var(--primary);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            margin-bottom: 20px;
-        }
-        .status-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
-        .status-success { background: #e8f5e9; color: #2e7d32; }
-        .status-warning { background: #fff3e0; color: #ef6c00; }
-        .status-danger { background: #ffebee; color: #c62828; }
-
-        /* Notifications */
-        #toast {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #333;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 30px;
-            font-size: 14px;
-            display: none;
-            z-index: 100;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-        }
-
-        /* History Tab */
-        .history-list {
-            margin-top: 20px;
-            max-height: 200px;
-            overflow-y: auto;
-        }
-        .history-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 10px;
-            border-bottom: 1px solid #eee;
-            font-size: 13px;
-        }
-        .history-thumb { width: 40px; height: 40px; border-radius: 6px; object-fit: cover; }
-
-        .hidden { display: none !important; }
-        
-        /* Footer */
-        footer {
-            padding: 20px;
-            text-align: center;
-            font-size: 12px;
-            color: #999;
-            background: rgba(0,0,0,0.02);
-        }
-    </style>
 </head>
+
 <body>
-
-<div class="app-shell">
-    
-    <!-- Screen: Auth -->
-    <div id="screen-auth" class="screen">
-        <h1><i data-lucide="leaf"></i> Doctor Planet</h1>
-        <p class="subtitle">Empowering farmers with instant AI-driven crop diagnostics and treatment plans.</p>
-        
-        <div id="auth-login">
-            <div class="input-group">
-                <i data-lucide="mail"></i>
-                <input type="email" id="login-email" placeholder="Email Address" value="farmer@agri.com">
-            </div>
-            <div class="input-group">
-                <i data-lucide="lock"></i>
-                <input type="password" id="login-pass" placeholder="Password" value="password">
-            </div>
-            <button class="btn-primary" onclick="handleLogin()">
-                Sign In <i data-lucide="arrow-right"></i>
-            </button>
-            <button class="btn-ghost" onclick="toggleAuth(true)">Create New Account</button>
-        </div>
-
-        <div id="auth-signup" class="hidden">
-            <div class="input-group">
-                <i data-lucide="user"></i>
-                <input type="text" placeholder="Full Name">
-            </div>
-            <div class="input-group">
-                <i data-lucide="mail"></i>
-                <input type="email" placeholder="Email Address">
-            </div>
-            <div class="input-group">
-                <i data-lucide="lock"></i>
-                <input type="password" placeholder="Password">
-            </div>
-            <button class="btn-primary" onclick="toggleAuth(false)">Register Now</button>
-            <button class="btn-ghost" onclick="toggleAuth(false)">Back to Login</button>
-        </div>
-    </div>
-
-    <!-- Screen: Dashboard -->
-    <div id="screen-main" class="screen hidden">
-        <div style="display:flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-            <h2 style="margin:0">Diagnosis Lab</h2>
-            <button class="btn-ghost" style="width:auto; padding:5px" onclick="handleLogout()">
-                <i data-lucide="log-out"></i>
-            </button>
-        </div>
-
-        <div class="upload-zone" id="drop-zone" onclick="document.getElementById('file-input').click()">
-            <div class="scanner" id="scanner-line"></div>
-            <div class="upload-placeholder" id="placeholder">
-                <i data-lucide="camera" style="width: 48px; height: 48px;"></i>
-                <p><strong>Click to Capture or Upload</strong><br><span style="font-size:12px">Supports JPG, PNG</span></p>
-            </div>
-            <img id="img-preview" class="hidden">
-            <input type="file" id="file-input" accept="image/*" hidden onchange="handleFile(event)">
-        </div>
-
-        <div id="analysis-controls">
-            <button id="btn-analyze" class="btn-primary" onclick="startAnalysis()" disabled>
-                <i data-lucide="zap"></i> Start AI Diagnosis
-            </button>
-            <button class="btn-outline" onclick="resetUI()">
-                <i data-lucide="refresh-cw"></i> Clear
-            </button>
-        </div>
-
-        <!-- Result Section -->
-        <div id="result-view" class="hidden" style="margin-top: 24px;">
-            <div class="result-card">
-                <div id="res-badge" class="status-badge"></div>
-                <h3 id="res-title" style="margin: 0 0 10px 0; color: var(--primary);"></h3>
-                <div style="font-size: 14px; line-height: 1.6;">
-                    <p><strong>AI Confidence:</strong> <span id="res-conf"></span></p>
-                    <p><strong>Prescription:</strong><br><span id="res-remedy" style="color:#555"></span></p>
+    <header>
+        <section class="nav-section">
+            <nav class="navig h-nav-resp">
+                <div class="profilePic" onclick="profileBtn()"></div>
+                <ul class="navul v-class-resp">
+                    <li class="navItem"><a href="#" class="navLink">Home</a></li>
+                    <li class="navItem"><a href="#about" class="navLink">About</a></li>
+                    <li class="navItem"><a href="#experience" class="navLink">Experience</a></li>
+                    <li class="navItem"><a href="#education" class="navLink">Education</a></li>
+                    <li class="navItem"><a href="#skills" class="navLink">Skills</a></li>
+                    <li class="navItem"><a href="#projects" class="navLink">Projects</a></li>
+                    <li class="navItem"><a href="#contact-me" class="navLink">Contact Me</a></li>
+                </ul>
+                <div class="burger">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </nav>
+        </section>
+    </header>
+    <main>
+        <section class="firstSection" id="#">
+            <div class="leftSection">
+                <h1>
+                    Hi, My name is <span class="purple">Rohan M S</span>
+                </h1>
+                <h2 class="hero-subtitle">I am a passionate</h2>
+                <span id="element" class="typed-text"></span>
+                <div class="hero-buttons">
+                    <a href="#projects" class="button">View Projects</a>
+                    <a href="#contact-me" class="button">Contact Me</a>
                 </div>
             </div>
-            <button class="btn-outline" onclick="resetUI()">New Diagnosis</button>
+            <div class="rightSection">
+                <img src="bg1.png"
+                    alt="Rohan M S profile illustration" class="hero-img">
+            </div>
+        </section>
+        <hr class="gradient">
+        <section class="secondSection" id="about">
+            <p class="h2">About Me</p>
+            <div class="inf">
+                <div>I'm a motivated web developer and engineering graduate with hands-on experience in full-stack
+                    development. Proficient in Core Java, Advanced Java, Spring Boot, JDBC , SQL, HTML5, CSS,
+                    JavaScript, Django, and C, I enjoy building dynamic and
+                    efficient web applications.</div>
+                <a href="Rohan M S Resume.pdf" target="_blank" class="button">Open Resume</a>
+                <a href="Rohan M S Resume.pdf" download class="button">Download Resume</a>
+
+            </div>
+        </section>
         </div>
 
-        <div id="history-section">
-            <h4 style="margin: 24px 0 10px 0; font-size: 14px; color: #888;">Recent Activity</h4>
-            <div class="history-list" id="history-list">
-                <p style="text-align:center; color:#ccc; font-size:12px; margin-top:20px;">No recent history</p>
+        <section class="fourthsection" id="experience">
+            <p class="h3">Experience</p>
+            <p class="text-with-vertical-line">Full Stack Web Developer</p>
+            <div class="exp">
+                <div class="var1">
+                    Varcons Technologies Pvt. Ltd. · Internship · Remote
+                </div>
+                <div class="dec1">
+                    Dec 2023 - Jan 2024 · 2 months
+                </div>
+                <div class="da1">
+                    Full Stack Developer Intern at Varcons Technologies Pvt. Ltd. Contributed as a Full Stack Developer
+                    Intern at Varcons Technologies,
+                    engaging in end-to-end web development projects. Enhanced skills in both front-end and back-end
+                    technologies.</div>
+                <a href="4RA21CS070.pdf" target="_blank" class="button">Open Certificate</a>
+
+            </div>
+            <hr>
+            <p class="text-with-vertical-line">AI - Mechine Learning Engineer </p>
+            <div class="exp">
+                <div class="var1">
+                    Rooman Technologies Pvt Ltd. · Internship · Remote
+                </div>
+                <div class="dec1">
+                    Sep 2024 - Mar 2025 · 7 months
+                </div>
+                <div class="da2">
+                    Completed an AI/ML Engineering internship at Rooman Technologies, gaining hands-on experience in
+                    machine learning, data preprocessing, and model development using Python and TensorFlow on
+                    real-world predictive analytics and computer vision projects.
+
+                    <a href="Rooman.pdf" target="_blank" class="button">Open Certificate</a>
+        </section>
+    </main>
+
+    <section class="edu-section" id="education">
+        <p class="edu-head">Education</p>
+        <div class="edu-card reveal fade-pop">
+            <div class="edu-logo-1"></div>
+            <p class="inst-name">Visvesvaraya Technological University</p>
+            <p class="edu-qualification">Bachelor of Engineering - B.E In Computer Science</p>
+            <p class="course-duration">Dec 2021 - Jul 2025</p>
+            <p class="grade">Grade: Current - 8.5 CGPA</p>
+        </div>
+        </div>
+        <div class="edu-card reveal fade-pop">
+            <div class="edu-logo-2"></div>
+            <p class="inst-name">Sri Pushpagiri Mahasamsthana PU College</p>
+            <p class="edu-qualification">Associate's degree, Science</p>
+            <p class="course-duration">May 2019 - Sep 2021</p>
+            <p class="grade">Grade: 83.16%</p>
+        </div>
+    </section>
+
+    <section class="thirdSection" id="skills">
+        <p class="h5">Skills</p>
+        <div class="skills-columns">
+            <div class="skills-col">
+                <div class="skill-card">
+                    <i class="fab fa-java"></i>
+                    <div class="skill-title">Java</div>
+                    <div class="skill-desc">Core Java, Advanced Java</div>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-leaf"></i>
+                    <div class="skill-title">Spring Boot</div>
+                    <div class="skill-desc">Spring, Servlets</div>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-plug"></i>
+                    <div class="skill-title">JDBC & Hibernate</div>
+                    <div class="skill-desc">Database Connectivity, ORM</div>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-terminal"></i>
+                    <div class="skill-title">C Programming</div>
+                    <div class="skill-desc">Procedural & Structured Programming</div>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-database"></i>
+                    <div class="skill-title">SQL</div>
+                    <div class="skill-desc">SQL, MySQL, PL/SQL</div>
+                </div>
+            </div>
+            <div class="skills-col">
+                <div class="skill-card">
+                    <i class="fas fa-code"></i>
+                    <div class="skill-title">Web Development</div>
+                    <div class="skill-desc">HTML5, CSS, JavaScript</div>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-python"></i>
+                    <div class="skill-title">Django</div>
+                    <div class="skill-desc">Python Web Framework</div>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-pencil-ruler"></i>
+                    <div class="skill-title">UI/UX Design</div>
+                    <div class="skill-desc">Figma, Wireframes, Prototyping</div>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-github"></i>
+                    <div class="skill-title">Git & GitHub</div>
+                    <div class="skill-desc">Version Control, Collaboration</div>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-layer-group"></i>
+                    <div class="skill-title">Frontend, Backend & Middleware</div>
+                    <div class="skill-desc">Full Stack Application Architecture</div>
+                </div>
+            </div>
+            <div class="skill-card center-card">
+                <i class="fas fa-brain"></i>
+                <div class="skill-title">Programming Logic & AI Tools</div>
+                <div class="skill-desc">
+                    Problem-solving, algorithms, and project experience with DALL-E 2 for generative AI content.
+                </div>
             </div>
         </div>
+    </section>
+
+    <section class="projects-section" id="projects">
+        <h2 class="projects-head">Projects</h2>
+        <div class="projects">
+            <div class="project" id="project1">
+                <h2>MediaMorph AI: Generative AI For Content Creation</h2>
+                <p>
+                    A mini project on Generative AI called 'MediaMorph AI' for our VTU 6th semester curriculum. It
+                    generates media content from user prompts. We chose Django for building dynamic web applications,
+                    and OpenAI as our AI model.
+                </p>
+                <a href="https://github.com/Sharan-m-04/MediaMorph-AI" class="view-more" target="_blank">View
+                    Project</a>
+            </div>
+            <div class="project" id="project2">
+                <h2>Ignyt - The Beer Lounge</h2>
+                <p>
+                    Internship Project at Varcons Technologies Pvt. Ltd.: Collaborated on developing a dynamic web
+                    platform for the client 'Ignyt - The Beer Lounge'. Leveraged Django to enhance user experience and
+                    streamline pub operations.
+                </p>
+                <a href="https://github.com/Sharan-m-04/Ignyt-Beer-Station" class="view-more" target="_blank">View
+                    Project</a>
+            </div>
+            <div class="project" id="project3">
+                <h2>HangMan Game</h2>
+                <p>
+                    Developed a data-driven Hangman game with optimized mechanics, intuitive design, and engaging
+                    gameplay to enhance user experience.
+                </p>
+                <a href="https://github.com/Rohan-ms23/HangMan-Game" class="view-more" target="_blank">View Project</a>
+            </div>
+            <div class="project" id="project4">
+                <h2>Bank Locker Management System</h2>
+                <p>
+                    Created a bank locker management system to enhance security, streamline access, and improve customer
+                    experience with intuitive features.
+                </p>
+                <a href="project4.html" class="view-more" target="_blank">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="certifications-section" id="certifications">
+  <h2 class="certifications-head">Certifications</h2>
+  <div class="certifications">
+    <div class="certificate">
+      <h3>AI - Machine Learning Engineer</h3>
+      <p>Issued by Rooman Technologies – Completed a comprehensive course on core ML concepts and algorithms.</p>
+      <a href="https://online.rooman.com/certificate/5dedb42b34e50082065a783265ce28a8" class="view-credential" target="_blank">View Credential</a>
     </div>
+    <div class="certificate">
+      <h3>Language Understanding with Models: Elevating NLP Capabilities </h3>
+      <p>Issued by IBM – Focused on data analysis, visualization, and Python programming.</p>
+      <a href="https://qr.me-qr.com/mobile/pdf/1d1c891e-3422-4054-a4b7-e88ba37b5cbd" class="view-credential" target="_blank">View Credential</a>
+    </div>
+    <div class="certificate">
+      <h3>Infosys Foundation </h3>
+      <p>Issued by Infosys – Explored Full Stack Web Development With The Python.</p>
+      <a href="G-2024-G4044-0067" class="view-credential" target="_blank">View Credential</a>
+    </div>
+    <div class="certificate">
+      <h3>Wadhwani Foundation </h3>
+      <p>Issued by Wadhwani - Developed strong communication and interpersonal skills through collaboration</p>
+      <a href="https://web.certificate.wfglobal.org/en/certificate?certificateId=673492b8d74d60ffbbb099cf" class="view-credential" target="_blank">View Credential</a>
+    </div>
+    <div class="certificate">
+      <h3>Varcons Technologies Pvt Ltd </h3>
+      <p>Issued by Varcons – Gained practical insights into Full stack development with HTML, CSS.</p>
+      <a href="bit.ly/3RI1YVU" class="view-credential" target="_blank">View Credential</a>
+    </div>
+  </div>
+</section>
 
-    <footer>
-        Doctor Planet v2.4 Pro | Precise Agri-AI
-    </footer>
-</div>
 
-<div id="toast">Message here</div>
 
-<script>
-    // Mock Database
-    const DISEASE_DB = [
-        { name: "Healthy Foliage", conf: "99.2%", type: "success", msg: "Plant is thriving. Continue standard nitrogen-rich fertilization and 1-inch weekly watering.", icon: "check-circle" },
-        { name: "Potato Late Blight", conf: "94.5%", type: "danger", msg: "High threat detected. Destroy infected plants immediately. Apply Chlorothalonil or Mancozeb to surrounding area.", icon: "alert-triangle" },
-        { name: "Powdery Mildew", conf: "88.1%", type: "warning", msg: "Fungal infection detected. Improve air circulation and apply potassium bicarbonate or neem oil spray.", icon: "info" },
-        { name: "Nutrient Deficiency (Iron)", conf: "82.4%", type: "warning", msg: "Chlorosis observed. Add chelated iron to the soil and check pH levels (ideal is 6.0-7.0).", icon: "droplet" }
-    ];
-
-    let historyData = [];
-
-    // Initialize Lucide Icons
-    lucide.createIcons();
-
-    function showToast(msg) {
-        const t = document.getElementById('toast');
-        t.innerText = msg;
-        t.style.display = 'block';
-        setTimeout(() => t.style.display = 'none', 3000);
-    }
-
-    function toggleAuth(showSignup) {
-        document.getElementById('auth-login').classList.toggle('hidden', showSignup);
-        document.getElementById('auth-signup').classList.toggle('hidden', !showSignup);
-    }
-
-    function handleLogin() {
-        const email = document.getElementById('login-email').value;
-        if(!email.includes('@')) return showToast("Please enter a valid email");
-        
-        document.getElementById('screen-auth').classList.add('hidden');
-        document.getElementById('screen-main').classList.remove('hidden');
-        showToast("Welcome back, Chief Farmer!");
-    }
-
-    function handleLogout() {
-        document.getElementById('screen-main').classList.add('hidden');
-        document.getElementById('screen-auth').classList.remove('hidden');
-        resetUI();
-    }
-
-    function handleFile(e) {
-        const file = e.target.files[0];
-        if (!file) return;
-
-        const reader = new FileReader();
-        reader.onload = function(event) {
-            const img = document.getElementById('img-preview');
-            img.src = event.target.result;
-            img.classList.remove('hidden');
-            document.getElementById('placeholder').classList.add('hidden');
-            document.getElementById('btn-analyze').disabled = false;
-        }
-        reader.readAsDataURL(file);
-    }
-
-    function startAnalysis() {
-        const btn = document.getElementById('btn-analyze');
-        const scanner = document.getElementById('scanner-line');
-        
-        btn.disabled = true;
-        btn.innerHTML = `<i data-lucide="loader-2" class="spin"></i> Processing...`;
-        lucide.createIcons();
-        scanner.style.display = 'block';
-
-        // Simulate AI Latency
-        setTimeout(() => {
-            const data = DISEASE_DB[Math.floor(Math.random() * DISEASE_DB.length)];
-            displayResult(data);
-            addToHistory(data);
-            
-            scanner.style.display = 'none';
-            btn.innerHTML = `<i data-lucide="zap"></i> Start AI Diagnosis`;
-            lucide.createIcons();
-        }, 2500);
-    }
-
-    function displayResult(data) {
-        document.getElementById('analysis-controls').classList.add('hidden');
-        const view = document.getElementById('result-view');
-        view.classList.remove('hidden');
-
-        const badge = document.getElementById('res-badge');
-        badge.className = `status-badge status-${data.type}`;
-        badge.innerHTML = `<i data-lucide="${data.icon}" style="width:14px"></i> ${data.type}`;
-        
-        document.getElementById('res-title').innerText = data.name;
-        document.getElementById('res-conf').innerText = data.conf;
-        document.getElementById('res-remedy').innerText = data.msg;
-        lucide.createIcons();
-    }
-
-    function addToHistory(data) {
-        const list = document.getElementById('history-list');
-        const img = document.getElementById('img-preview').src;
-        
-        const item = document.createElement('div');
-        item.className = 'history-item';
-        item.innerHTML = `
-            <img src="${img}" class="history-thumb">
-            <div style="flex:1">
-                <div style="font-weight:600">${data.name}</div>
-                <div style="font-size:11px; color:#888">${new Date().toLocaleTimeString()} • ${data.conf} match</div>
+    <section class="contact-section" id="contact-me">
+        <h2 class="contact-head">Contact Me</h2>
+        <form action="https://api.web3forms.com/submit" method="POST" class="form-container fade">
+            <input type="hidden" name="access_key" value="ab0977c2-f32a-4a1b-8bb4-bdb179d32826">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input class="contact-input" type="text" id="name" name="name" required placeholder="Your Name">
             </div>
-            <i data-lucide="chevron-right" style="width:14px; color:#ccc"></i>
-        `;
-        
-        if(list.querySelector('p')) list.innerHTML = '';
-        list.prepend(item);
-        lucide.createIcons();
-    }
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input class="contact-input" type="email" id="email" name="email" required placeholder="Your Email">
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea class="contact-input" id="message" name="message" rows="5" required
+                    placeholder="Your Message"></textarea>
+            </div>
+            <button class="contact-submit-btn" type="submit" id="submit">Send</button>
+        </form>
+    </section>
+    <button id="rToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+    <section class="footer">
+        <div class="footer-content">
+            <p class="footer-head">Rohan M S &mdash; Developer Portfolio</p>
+            <nav class="footer-nav">
+                <ul class="footer-navul">
+                    <li><a href="#" class="footer-navLink">Home</a></li>
+                    <li><a href="#about" class="footer-navLink">About</a></li>
+                    <li><a href="#experience" class="footer-navLink">Experience</a></li>
+                    <li><a href="#education" class="footer-navLink">Education</a></li>
+                    <li><a href="#skills" class="footer-navLink">Skills</a></li>
+                    <li><a href="#projects" class="footer-navLink">Projects</a></li>
+                    <li><a href="#contact-me" class="footer-navLink">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="social-links">
+                <a href="mailto:rohanms0405@gmail.com" class="social-icons" target="_blank" title="Email"><i
+                        class="fa-solid fa-envelope"></i></a>
+                <a href="https://github.com/Rohan-ms23" class="social-icons" target="_blank" title="GitHub"><i
+                        class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/rohan-ms23" class="social-icons" target="_blank"
+                    title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/rohan_ro23/" class="social-icons" target="_blank"
+                    title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://twitter.com/rohanms0405" class="social-icons" target="_blank" title="Twitter"><i
+                        class="fa-brands fa-twitter"></i></a>
+            </div>
+        </div>
+    </section>
 
-    function resetUI() {
-        document.getElementById('file-input').value = '';
-        document.getElementById('img-preview').src = '';
-        document.getElementById('img-preview').classList.add('hidden');
-        document.getElementById('placeholder').classList.remove('hidden');
-        document.getElementById('btn-analyze').disabled = true;
-        document.getElementById('result-view').classList.add('hidden');
-        document.getElementById('analysis-controls').classList.remove('hidden');
-        document.getElementById('scanner-line').style.display = 'none';
-    }
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<h2 id="element"></h2>
+<script>
+const typedOptions = {
+  strings: [
+    'Computer Science Graduate.',
+    'Full Stack Web Developer.',
+    'Web Designer.',
+    'UI/UX Enthusiast.',
+    'SQL Specialist.',
+    'Spring Boot Developer.'
+  ],
+  typeSpeed: 40,
+  backSpeed: 20,
+  loop: false,
+  showCursor: true,
+  cursorChar: '|'
+};
+
+let typedInstance;
+
+if (typeof observer !== 'undefined') {
+  observer.observe(document.querySelector('#element'));
+  const originalCallback = observer.callback || observer._callback || (() => {});
+  const newCallback = (entries) => {
+    entries.forEach(entry => {
+      if (entry.target.id === 'element') {
+        if (entry.isIntersecting) {
+          if (!typedInstance) typedInstance = new Typed('#element', typedOptions);
+        } else {
+          if (typedInstance) {
+            typedInstance.destroy();
+            typedInstance = null;
+            document.querySelector('#element').textContent = '';
+          }
+        }
+      }
+    });
+    if (typeof originalCallback === 'function') originalCallback(entries);
+  };
+  observer.callback = newCallback;
+} else {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && entry.target.id === 'element') {
+        if (!typedInstance) typedInstance = new Typed('#element', typedOptions);
+      } else if (entry.target.id === 'element') {
+        if (typedInstance) {
+          typedInstance.destroy();
+          typedInstance = null;
+          document.querySelector('#element').textContent = '';
+        }
+      }
+    });
+  }, { threshold: 0.3 });
+  observer.observe(document.querySelector('#element'));
+}
 </script>
 
-<style>
-    /* Utility Animation */
-    .spin { animation: rotate 2s linear infinite; }
-    @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-</style>
+    <script>
+        const burger = document.querySelector('.burger');
+const navig = document.querySelector('.navig');
+const navul = document.querySelector('.navul');
 
+// Ensure mobile nav is closed on page load
+navig.classList.remove('h-nav-resp');
+navul.classList.remove('v-class-resp');
+
+burger.addEventListener('click', () => {
+    navig.classList.toggle('h-nav-resp');  // toggle burger animation
+    navul.classList.toggle('v-class-resp'); // show/hide menu
+});
+
+// Close menu when a link is clicked
+document.querySelectorAll('.navLink').forEach(link => {
+    link.addEventListener('click', () => {
+        navig.classList.remove('h-nav-resp');
+        navul.classList.remove('v-class-resp');
+    });
+});
+</script>
+
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, { threshold: 0.1 });
+
+
+        observer.observe(document.querySelector('.secondSection'));
+    </script>
+    <script>
+
+        let rToTop = document.getElementById("rToTop");
+
+        window.onscroll = function () {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                rToTop.style.display = "block";
+            }
+            else {
+                rToTop.style.display = "none";
+            }
+        }
+
+        rToTop.addEventListener("click", backToTop);
+        function backToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const projects = document.querySelectorAll('.project');
+
+            projects.forEach((project, index) => {
+                project.style.animation = `fadeIn 0.5s ease ${(index + 1) * 0.3}s both`;
+            });
+        });
+
+
+        const styleSheet = document.styleSheets[0];
+        styleSheet.insertRule(`
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    `, styleSheet.cssRules.length);
+    </script>
 </body>
-                    </html>
+
+    </html>
