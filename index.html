@@ -1,460 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rohan M S - Developer Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="phone.css" media="only screen and (max-width: 768px)">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor Planet - Plant Disease Detector</title>
+  <style>
+    :root {
+      --primary: #2e7d32;
+      --secondary: #4caf50;
+      --light: #e8f5e9;
+      --dark: #1b5e20;
+    }
 
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f4f7f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 400px;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    h1, h2 {
+      color: var(--dark);
+    }
+
+    input {
+      width: 90%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: var(--dark);
+    }
+
+    .secondary-btn {
+      background: #888;
+      margin-top: 10px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .upload-box {
+      border: 2px dashed var(--secondary);
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+      background: var(--light);
+      cursor: pointer;
+    }
+
+    #preview-image {
+      max-width: 100%;
+      max-height: 200px;
+      margin-top: 10px;
+      border-radius: 8px;
+      display: none;
+    }
+
+    .result-card {
+      background: var(--light);
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+      text-align: left;
+      border-left: 5px solid var(--primary);
+    }
+  </style>
 </head>
 
 <body>
-    <header>
-        <section class="nav-section">
-            <nav class="navig h-nav-resp">
-                <div class="profilePic" onclick="profileBtn()"></div>
-                <ul class="navul v-class-resp">
-                    <li class="navItem"><a href="#" class="navLink">Home</a></li>
-                    <li class="navItem"><a href="#about" class="navLink">About</a></li>
-                    <li class="navItem"><a href="#experience" class="navLink">Experience</a></li>
-                    <li class="navItem"><a href="#education" class="navLink">Education</a></li>
-                    <li class="navItem"><a href="#skills" class="navLink">Skills</a></li>
-                    <li class="navItem"><a href="#projects" class="navLink">Projects</a></li>
-                    <li class="navItem"><a href="#contact-me" class="navLink">Contact Me</a></li>
-                </ul>
-                <div class="burger">
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
-                </div>
-            </nav>
-        </section>
-    </header>
-    <main>
-        <section class="firstSection" id="#">
-            <div class="leftSection">
-                <h1>
-                    Hi, My name is <span class="purple">Rohan M S</span>
-                </h1>
-                <h2 class="hero-subtitle">I am a passionate</h2>
-                <span id="element" class="typed-text"></span>
-                <div class="hero-buttons">
-                    <a href="#projects" class="button">View Projects</a>
-                    <a href="#contact-me" class="button">Contact Me</a>
-                </div>
-            </div>
-            <div class="rightSection">
-                <img src="bg1.png"
-                    alt="Rohan M S profile illustration" class="hero-img">
-            </div>
-        </section>
-        <hr class="gradient">
-        <section class="secondSection" id="about">
-            <p class="h2">About Me</p>
-            <div class="inf">
-                <div>I'm a motivated web developer and engineering graduate with hands-on experience in full-stack
-                    development. Proficient in Core Java, Advanced Java, Spring Boot, JDBC , SQL, HTML5, CSS,
-                    JavaScript, Django, and C, I enjoy building dynamic and
-                    efficient web applications.</div>
-                <a href="Rohan M S Resume.pdf" target="_blank" class="button">Open Resume</a>
-                <a href="Rohan M S Resume.pdf" download class="button">Download Resume</a>
 
-            </div>
-        </section>
-        </div>
+  <!-- AUTH SCREEN -->
+  <div class="container" id="auth-screen">
+    <h1>Doctor Planet</h1>
 
-        <section class="fourthsection" id="experience">
-            <p class="h3">Experience</p>
-            <p class="text-with-vertical-line">Full Stack Web Developer</p>
-            <div class="exp">
-                <div class="var1">
-                    Varcons Technologies Pvt. Ltd. · Internship · Remote
-                </div>
-                <div class="dec1">
-                    Dec 2023 - Jan 2024 · 2 months
-                </div>
-                <div class="da1">
-                    Full Stack Developer Intern at Varcons Technologies Pvt. Ltd. Contributed as a Full Stack Developer
-                    Intern at Varcons Technologies,
-                    engaging in end-to-end web development projects. Enhanced skills in both front-end and back-end
-                    technologies.</div>
-                <a href="4RA21CS070.pdf" target="_blank" class="button">Open Certificate</a>
-
-            </div>
-            <hr>
-            <p class="text-with-vertical-line">AI - Mechine Learning Engineer </p>
-            <div class="exp">
-                <div class="var1">
-                    Rooman Technologies Pvt Ltd. · Internship · Remote
-                </div>
-                <div class="dec1">
-                    Sep 2024 - Mar 2025 · 7 months
-                </div>
-                <div class="da2">
-                    Completed an AI/ML Engineering internship at Rooman Technologies, gaining hands-on experience in
-                    machine learning, data preprocessing, and model development using Python and TensorFlow on
-                    real-world predictive analytics and computer vision projects.
-
-                    <a href="Rooman.pdf" target="_blank" class="button">Open Certificate</a>
-        </section>
-    </main>
-
-    <section class="edu-section" id="education">
-        <p class="edu-head">Education</p>
-        <div class="edu-card reveal fade-pop">
-            <div class="edu-logo-1"></div>
-            <p class="inst-name">Visvesvaraya Technological University</p>
-            <p class="edu-qualification">Bachelor of Engineering - B.E In Computer Science</p>
-            <p class="course-duration">Dec 2021 - Jul 2025</p>
-            <p class="grade">Grade: Current - 8.5 CGPA</p>
-        </div>
-        </div>
-        <div class="edu-card reveal fade-pop">
-            <div class="edu-logo-2"></div>
-            <p class="inst-name">Sri Pushpagiri Mahasamsthana PU College</p>
-            <p class="edu-qualification">Associate's degree, Science</p>
-            <p class="course-duration">May 2019 - Sep 2021</p>
-            <p class="grade">Grade: 83.16%</p>
-        </div>
-    </section>
-
-    <section class="thirdSection" id="skills">
-        <p class="h5">Skills</p>
-        <div class="skills-columns">
-            <div class="skills-col">
-                <div class="skill-card">
-                    <i class="fab fa-java"></i>
-                    <div class="skill-title">Java</div>
-                    <div class="skill-desc">Core Java, Advanced Java</div>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-leaf"></i>
-                    <div class="skill-title">Spring Boot</div>
-                    <div class="skill-desc">Spring, Servlets</div>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-plug"></i>
-                    <div class="skill-title">JDBC & Hibernate</div>
-                    <div class="skill-desc">Database Connectivity, ORM</div>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-terminal"></i>
-                    <div class="skill-title">C Programming</div>
-                    <div class="skill-desc">Procedural & Structured Programming</div>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-database"></i>
-                    <div class="skill-title">SQL</div>
-                    <div class="skill-desc">SQL, MySQL, PL/SQL</div>
-                </div>
-            </div>
-            <div class="skills-col">
-                <div class="skill-card">
-                    <i class="fas fa-code"></i>
-                    <div class="skill-title">Web Development</div>
-                    <div class="skill-desc">HTML5, CSS, JavaScript</div>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-python"></i>
-                    <div class="skill-title">Django</div>
-                    <div class="skill-desc">Python Web Framework</div>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-pencil-ruler"></i>
-                    <div class="skill-title">UI/UX Design</div>
-                    <div class="skill-desc">Figma, Wireframes, Prototyping</div>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-github"></i>
-                    <div class="skill-title">Git & GitHub</div>
-                    <div class="skill-desc">Version Control, Collaboration</div>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-layer-group"></i>
-                    <div class="skill-title">Frontend, Backend & Middleware</div>
-                    <div class="skill-desc">Full Stack Application Architecture</div>
-                </div>
-            </div>
-            <div class="skill-card center-card">
-                <i class="fas fa-brain"></i>
-                <div class="skill-title">Programming Logic & AI Tools</div>
-                <div class="skill-desc">
-                    Problem-solving, algorithms, and project experience with DALL-E 2 for generative AI content.
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="projects-section" id="projects">
-        <h2 class="projects-head">Projects</h2>
-        <div class="projects">
-            <div class="project" id="project1">
-                <h2>MediaMorph AI: Generative AI For Content Creation</h2>
-                <p>
-                    A mini project on Generative AI called 'MediaMorph AI' for our VTU 6th semester curriculum. It
-                    generates media content from user prompts. We chose Django for building dynamic web applications,
-                    and OpenAI as our AI model.
-                </p>
-                <a href="https://github.com/Sharan-m-04/MediaMorph-AI" class="view-more" target="_blank">View
-                    Project</a>
-            </div>
-            <div class="project" id="project2">
-                <h2>Ignyt - The Beer Lounge</h2>
-                <p>
-                    Internship Project at Varcons Technologies Pvt. Ltd.: Collaborated on developing a dynamic web
-                    platform for the client 'Ignyt - The Beer Lounge'. Leveraged Django to enhance user experience and
-                    streamline pub operations.
-                </p>
-                <a href="https://github.com/Sharan-m-04/Ignyt-Beer-Station" class="view-more" target="_blank">View
-                    Project</a>
-            </div>
-            <div class="project" id="project3">
-                <h2>HangMan Game</h2>
-                <p>
-                    Developed a data-driven Hangman game with optimized mechanics, intuitive design, and engaging
-                    gameplay to enhance user experience.
-                </p>
-                <a href="https://github.com/Rohan-ms23/HangMan-Game" class="view-more" target="_blank">View Project</a>
-            </div>
-            <div class="project" id="project4">
-                <h2>Bank Locker Management System</h2>
-                <p>
-                    Created a bank locker management system to enhance security, streamline access, and improve customer
-                    experience with intuitive features.
-                </p>
-                <a href="project4.html" class="view-more" target="_blank">View Project</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="certifications-section" id="certifications">
-  <h2 class="certifications-head">Certifications</h2>
-  <div class="certifications">
-    <div class="certificate">
-      <h3>AI - Machine Learning Engineer</h3>
-      <p>Issued by Rooman Technologies – Completed a comprehensive course on core ML concepts and algorithms.</p>
-      <a href="https://online.rooman.com/certificate/5dedb42b34e50082065a783265ce28a8" class="view-credential" target="_blank">View Credential</a>
+    <!-- Login Form -->
+    <div id="login-form">
+      <h2>Login</h2>
+      <input type="email" id="login-email" placeholder="Email">
+      <input type="password" id="login-pass" placeholder="Password">
+      <button onclick="handleLogin()">Login</button>
+      <p>Don't have an account? <a href="#" onclick="toggleAuth()">Sign Up</a></p>
     </div>
-    <div class="certificate">
-      <h3>Language Understanding with Models: Elevating NLP Capabilities </h3>
-      <p>Issued by IBM – Focused on data analysis, visualization, and Python programming.</p>
-      <a href="https://qr.me-qr.com/mobile/pdf/1d1c891e-3422-4054-a4b7-e88ba37b5cbd" class="view-credential" target="_blank">View Credential</a>
-    </div>
-    <div class="certificate">
-      <h3>Infosys Foundation </h3>
-      <p>Issued by Infosys – Explored Full Stack Web Development With The Python.</p>
-      <a href="G-2024-G4044-0067" class="view-credential" target="_blank">View Credential</a>
-    </div>
-    <div class="certificate">
-      <h3>Wadhwani Foundation </h3>
-      <p>Issued by Wadhwani - Developed strong communication and interpersonal skills through collaboration</p>
-      <a href="https://web.certificate.wfglobal.org/en/certificate?certificateId=673492b8d74d60ffbbb099cf" class="view-credential" target="_blank">View Credential</a>
-    </div>
-    <div class="certificate">
-      <h3>Varcons Technologies Pvt Ltd </h3>
-      <p>Issued by Varcons – Gained practical insights into Full stack development with HTML, CSS.</p>
-      <a href="bit.ly/3RI1YVU" class="view-credential" target="_blank">View Credential</a>
+
+    <!-- Signup Form -->
+    <div id="signup-form" class="hidden">
+      <h2>Create Account</h2>
+      <input type="text" id="reg-name" placeholder="Full Name">
+      <input type="email" id="reg-email" placeholder="Email">
+      <input type="password" id="reg-pass" placeholder="Password">
+      <button onclick="handleSignup()">Sign Up</button>
+      <p>Already have an account? <a href="#" onclick="toggleAuth()">Login</a></p>
     </div>
   </div>
-</section>
 
+  <!-- MAIN APP SCREEN -->
+  <div class="container hidden" id="app-screen">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <h2>Diagnosis Center</h2>
+      <small onclick="logout()" style="cursor:pointer; color:red;">Logout</small>
+    </div>
 
+    <div class="upload-box" onclick="document.getElementById('file-input').click()">
+      <p>Click to Upload Plant Photo</p>
+      <input type="file" id="file-input" accept="image/*" style="display:none" onchange="previewFile()">
+      <img id="preview-image" src="" alt="Preview">
+    </div>
 
-    <section class="contact-section" id="contact-me">
-        <h2 class="contact-head">Contact Me</h2>
-        <form action="https://api.web3forms.com/submit" method="POST" class="form-container fade">
-            <input type="hidden" name="access_key" value="ab0977c2-f32a-4a1b-8bb4-bdb179d32826">
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input class="contact-input" type="text" id="name" name="name" required placeholder="Your Name">
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input class="contact-input" type="email" id="email" name="email" required placeholder="Your Email">
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea class="contact-input" id="message" name="message" rows="5" required
-                    placeholder="Your Message"></textarea>
-            </div>
-            <button class="contact-submit-btn" type="submit" id="submit">Send</button>
-        </form>
-    </section>
-    <button id="rToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
-    <section class="footer">
-        <div class="footer-content">
-            <p class="footer-head">Rohan M S &mdash; Developer Portfolio</p>
-            <nav class="footer-nav">
-                <ul class="footer-navul">
-                    <li><a href="#" class="footer-navLink">Home</a></li>
-                    <li><a href="#about" class="footer-navLink">About</a></li>
-                    <li><a href="#experience" class="footer-navLink">Experience</a></li>
-                    <li><a href="#education" class="footer-navLink">Education</a></li>
-                    <li><a href="#skills" class="footer-navLink">Skills</a></li>
-                    <li><a href="#projects" class="footer-navLink">Projects</a></li>
-                    <li><a href="#contact-me" class="footer-navLink">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="social-links">
-                <a href="mailto:rohanms0405@gmail.com" class="social-icons" target="_blank" title="Email"><i
-                        class="fa-solid fa-envelope"></i></a>
-                <a href="https://github.com/Rohan-ms23" class="social-icons" target="_blank" title="GitHub"><i
-                        class="fa-brands fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/rohan-ms23" class="social-icons" target="_blank"
-                    title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://www.instagram.com/rohan_ro23/" class="social-icons" target="_blank"
-                    title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://twitter.com/rohanms0405" class="social-icons" target="_blank" title="Twitter"><i
-                        class="fa-brands fa-twitter"></i></a>
-            </div>
-        </div>
-    </section>
+    <button onclick="analyzePlant()">Analyze Disease</button>
+    <button class="secondary-btn" onclick="clearData()">Reset</button>
 
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<h2 id="element"></h2>
-<script>
-const typedOptions = {
-  strings: [
-    'Computer Science Graduate.',
-    'Full Stack Web Developer.',
-    'Web Designer.',
-    'UI/UX Enthusiast.',
-    'SQL Specialist.',
-    'Spring Boot Developer.'
-  ],
-  typeSpeed: 40,
-  backSpeed: 20,
-  loop: false,
-  showCursor: true,
-  cursorChar: '|'
-};
+    <div id="loading" class="hidden" style="margin-top:15px;">
+      Scanning leaf patterns...
+    </div>
 
-let typedInstance;
+    <!-- Results Display -->
+    <div id="result-area" class="hidden">
+      <div class="result-card">
+        <h3 id="disease-name">Disease Detected</h3>
+        <p><strong>Confidence:</strong> <span id="confidence-score"></span></p>
+        <hr>
+        <h4>Remedies:</h4>
+        <p id="remedies-text"></p>
+      </div>
+    </div>
+  </div>
 
-if (typeof observer !== 'undefined') {
-  observer.observe(document.querySelector('#element'));
-  const originalCallback = observer.callback || observer._callback || (() => {});
-  const newCallback = (entries) => {
-    entries.forEach(entry => {
-      if (entry.target.id === 'element') {
-        if (entry.isIntersecting) {
-          if (!typedInstance) typedInstance = new Typed('#element', typedOptions);
-        } else {
-          if (typedInstance) {
-            typedInstance.destroy();
-            typedInstance = null;
-            document.querySelector('#element').textContent = '';
+  <script>
+    function toggleAuth() {
+      document.getElementById('login-form').classList.toggle('hidden');
+      document.getElementById('signup-form').classList.toggle('hidden');
+    }
+
+    function handleLogin() {
+      const email = document.getElementById('login-email').value;
+      if (email) {
+        document.getElementById('auth-screen').classList.add('hidden');
+        document.getElementById('app-screen').classList.remove('hidden');
+      } else {
+        alert("Please enter email");
+      }
+    }
+
+    function handleSignup() {
+      alert("Account created successfully! Please login.");
+      toggleAuth();
+    }
+
+    function logout() {
+      document.getElementById('app-screen').classList.add('hidden');
+      document.getElementById('auth-screen').classList.remove('hidden');
+      clearData();
+    }
+
+    function previewFile() {
+      const preview = document.getElementById('preview-image');
+      const file = document.getElementById('file-input').files[0];
+      const reader = new FileReader();
+
+      reader.onload = function () {
+        preview.src = reader.result;
+        preview.style.display = 'block';
+      };
+
+      if (file) {
+        reader.readAsDataURL(file);
+      }
+    }
+
+    function analyzePlant() {
+      const fileInput = document.getElementById('file-input');
+      if (fileInput.files.length === 0) {
+        alert("Please upload a photo first.");
+        return;
+      }
+
+      document.getElementById('loading').classList.remove('hidden');
+      document.getElementById('result-area').classList.add('hidden');
+
+      setTimeout(() => {
+        document.getElementById('loading').classList.add('hidden');
+        document.getElementById('result-area').classList.remove('hidden');
+
+        const mockDiseases = [
+          {
+            name: "Tomato Early Blight",
+            confidence: "92%",
+            remedy: "Prune infected leaves. Apply copper-based fungicides. Improve air circulation."
+          },
+          {
+            name: "Rose Black Spot",
+            confidence: "88%",
+            remedy: "Remove fallen leaves. Avoid overhead watering. Use Neem Oil spray."
+          },
+          {
+            name: "Healthy Plant",
+            confidence: "99%",
+            remedy: "Keep up the good work! Ensure regular watering and sunlight."
           }
-        }
-      }
-    });
-    if (typeof originalCallback === 'function') originalCallback(entries);
-  };
-  observer.callback = newCallback;
-} else {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && entry.target.id === 'element') {
-        if (!typedInstance) typedInstance = new Typed('#element', typedOptions);
-      } else if (entry.target.id === 'element') {
-        if (typedInstance) {
-          typedInstance.destroy();
-          typedInstance = null;
-          document.querySelector('#element').textContent = '';
-        }
-      }
-    });
-  }, { threshold: 0.3 });
-  observer.observe(document.querySelector('#element'));
-}
-</script>
+        ];
 
-    <script>
-        const burger = document.querySelector('.burger');
-const navig = document.querySelector('.navig');
-const navul = document.querySelector('.navul');
+        const result = mockDiseases[Math.floor(Math.random() * mockDiseases.length)];
 
-// Ensure mobile nav is closed on page load
-navig.classList.remove('h-nav-resp');
-navul.classList.remove('v-class-resp');
+        document.getElementById('disease-name').innerText = result.name;
+        document.getElementById('disease-name').style.color =
+          result.name === "Healthy Plant" ? "green" : "red";
+        document.getElementById('confidence-score').innerText = result.confidence;
+        document.getElementById('remedies-text').innerText = result.remedy;
+      }, 2000);
+    }
 
-burger.addEventListener('click', () => {
-    navig.classList.toggle('h-nav-resp');  // toggle burger animation
-    navul.classList.toggle('v-class-resp'); // show/hide menu
-});
+    function clearData() {
+      document.getElementById('file-input').value = "";
+      document.getElementById('preview-image').style.display = 'none';
+      document.getElementById('result-area').classList.add('hidden');
+    }
+  </script>
 
-// Close menu when a link is clicked
-document.querySelectorAll('.navLink').forEach(link => {
-    link.addEventListener('click', () => {
-        navig.classList.remove('h-nav-resp');
-        navul.classList.remove('v-class-resp');
-    });
-});
-</script>
-
-
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                }
-            });
-        }, { threshold: 0.1 });
-
-
-        observer.observe(document.querySelector('.secondSection'));
-    </script>
-    <script>
-
-        let rToTop = document.getElementById("rToTop");
-
-        window.onscroll = function () {
-            scrollFunction();
-        };
-
-        function scrollFunction() {
-            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-                rToTop.style.display = "block";
-            }
-            else {
-                rToTop.style.display = "none";
-            }
-        }
-
-        rToTop.addEventListener("click", backToTop);
-        function backToTop() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
-
-    </script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const projects = document.querySelectorAll('.project');
-
-            projects.forEach((project, index) => {
-                project.style.animation = `fadeIn 0.5s ease ${(index + 1) * 0.3}s both`;
-            });
-        });
-
-
-        const styleSheet = document.styleSheets[0];
-        styleSheet.insertRule(`
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-    `, styleSheet.cssRules.length);
-    </script>
 </body>
-
-</html>
+        </html>
