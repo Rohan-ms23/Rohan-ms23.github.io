@@ -1,460 +1,356 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rohan M S - Developer Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta name="description" content="Portfolio of Rohan M S, Full Stack Web Developer and Software Engineer.">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="phone.css" media="only screen and (max-width: 768px)">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
 </head>
+<body class="dark-theme">
+    <!-- Premium Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
 
-<body>
-    <header>
-        <section class="nav-section">
-            <nav class="navig h-nav-resp">
-                <div class="profilePic" onclick="profileBtn()"></div>
-                <ul class="navul v-class-resp">
-                    <li class="navItem"><a href="#" class="navLink">Home</a></li>
-                    <li class="navItem"><a href="#about" class="navLink">About</a></li>
-                    <li class="navItem"><a href="#experience" class="navLink">Experience</a></li>
-                    <li class="navItem"><a href="#education" class="navLink">Education</a></li>
-                    <li class="navItem"><a href="#skills" class="navLink">Skills</a></li>
-                    <li class="navItem"><a href="#projects" class="navLink">Projects</a></li>
-                    <li class="navItem"><a href="#contact-me" class="navLink">Contact Me</a></li>
+    <!-- Animated Mesh Background -->
+    <div class="mesh-bg">
+        <div class="mesh-blob blob-1"></div>
+        <div class="mesh-blob blob-2"></div>
+        <div class="mesh-blob blob-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="header" id="header">
+        <div class="nav-container">
+            <nav class="navig" aria-label="Main Navigation">
+                <a href="#" class="profilePic" aria-label="Home" title="Home" data-magnetic></a>
+                
+                <ul class="navul">
+                    <li class="navItem"><a href="#" class="navLink" data-magnetic>Home</a></li>
+                    <li class="navItem"><a href="#about" class="navLink" data-magnetic>About</a></li>
+                    <li class="navItem"><a href="#experience" class="navLink" data-magnetic>Experience</a></li>
+                    <li class="navItem"><a href="#education" class="navLink" data-magnetic>Education</a></li>
+                    <li class="navItem"><a href="#skills" class="navLink" data-magnetic>Skills</a></li>
+                    <li class="navItem"><a href="#projects" class="navLink" data-magnetic>Projects</a></li>
+                    <li class="navItem"><a href="#contact-me" class="navLink" data-magnetic>Contact Me</a></li>
                 </ul>
-                <div class="burger">
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
-                </div>
+
+                <button class="burger" aria-label="Toggle navigation menu" aria-expanded="false" data-magnetic>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </button>
             </nav>
-        </section>
-    </header>
-    <main>
-        <section class="firstSection" id="#">
-            <div class="leftSection">
-                <h1>
-                    Hi, My name is <span class="purple">Rohan M S</span>
-                </h1>
-                <h2 class="hero-subtitle">I am a passionate</h2>
-                <span id="element" class="typed-text"></span>
-                <div class="hero-buttons">
-                    <a href="#projects" class="button">View Projects</a>
-                    <a href="#contact-me" class="button">Contact Me</a>
-                </div>
-            </div>
-            <div class="rightSection">
-                <img src="bg1.png"
-                    alt="Rohan M S profile illustration" class="hero-img">
-            </div>
-        </section>
-        <hr class="gradient">
-        <section class="secondSection" id="about">
-            <p class="h2">About Me</p>
-            <div class="inf">
-                <div>I'm a motivated web developer and engineering graduate with hands-on experience in full-stack
-                    development. Proficient in Core Java, Advanced Java, Spring Boot, JDBC , SQL, HTML5, CSS,
-                    JavaScript, Django, and C, I enjoy building dynamic and
-                    efficient web applications.</div>
-                <a href="Rohan M S Resume.pdf" target="_blank" class="button">Open Resume</a>
-                <a href="Rohan M S Resume.pdf" download class="button">Download Resume</a>
-
-            </div>
-        </section>
         </div>
+    </header>
 
-        <section class="fourthsection" id="experience">
-            <p class="h3">Experience</p>
-            <p class="text-with-vertical-line">Full Stack Web Developer</p>
-            <div class="exp">
-                <div class="var1">
-                    Varcons Technologies Pvt. Ltd. · Internship · Remote
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" id="home">
+            <div class="hero-container">
+                <div class="hero-left">
+                    <h1 class="scroll-reveal">Hi, My name is <br/><span class="text-gradient">Rohan M S</span></h1>
+                    <h2 class="hero-subtitle scroll-reveal">I am a passionate</h2>
+                    <span id="element" class="typed-text scroll-reveal"></span>
+                    <div class="hero-buttons scroll-reveal">
+                        <a href="#projects" class="btn btn-primary" data-magnetic>View Projects</a>
+                        <a href="#contact-me" class="btn btn-secondary" data-magnetic>Contact Me</a>
+                    </div>
                 </div>
-                <div class="dec1">
-                    Dec 2023 - Jan 2024 · 2 months
+                <div class="hero-right scroll-reveal">
+                    <div class="image-wrapper" data-tilt>
+                        <div class="image-glow"></div>
+                        <img src="bg1.png" alt="Rohan M S profile illustration" class="hero-img" width="280" height="280" loading="eager">
+                    </div>
                 </div>
-                <div class="da1">
-                    Full Stack Developer Intern at Varcons Technologies Pvt. Ltd. Contributed as a Full Stack Developer
-                    Intern at Varcons Technologies,
-                    engaging in end-to-end web development projects. Enhanced skills in both front-end and back-end
-                    technologies.</div>
-                <a href="4RA21CS070.pdf" target="_blank" class="button">Open Certificate</a>
-
             </div>
-            <hr>
-            <p class="text-with-vertical-line">AI - Mechine Learning Engineer </p>
-            <div class="exp">
-                <div class="var1">
-                    Rooman Technologies Pvt Ltd. · Internship · Remote
-                </div>
-                <div class="dec1">
-                    Sep 2024 - Mar 2025 · 7 months
-                </div>
-                <div class="da2">
-                    Completed an AI/ML Engineering internship at Rooman Technologies, gaining hands-on experience in
-                    machine learning, data preprocessing, and model development using Python and TensorFlow on
-                    real-world predictive analytics and computer vision projects.
+        </section>
 
-                    <a href="Rooman.pdf" target="_blank" class="button">Open Certificate</a>
+        <!-- About Section -->
+        <section class="about-section" id="about">
+            <div class="container">
+                <h2 class="section-title scroll-reveal">About Me</h2>
+                <div class="about-content scroll-reveal" data-tilt>
+                    <p>I'm a motivated web developer and engineering graduate with hands-on experience in full-stack development. Proficient in Core Java, Advanced Java, Spring Boot, JDBC, SQL, HTML5, CSS, JavaScript, Django, and C, I enjoy building dynamic and efficient web applications.</p>
+                    <div class="action-buttons">
+                        <a href="Rohan M S Resume.pdf" target="_blank" class="btn btn-primary" data-magnetic>Open Resume</a>
+                        <a href="Rohan M S Resume.pdf" download class="btn btn-outline" data-magnetic>Download Resume</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="experience-section" id="experience">
+            <div class="container">
+                <h2 class="section-title scroll-reveal">Experience</h2>
+                
+                <article class="timeline-item scroll-reveal">
+                    <h3 class="timeline-title">Full Stack Web Developer</h3>
+                    <div class="exp-card" data-tilt>
+                        <p class="exp-company">Varcons Technologies Pvt. Ltd. &middot; Internship &middot; Remote</p>
+                        <p class="exp-date">Dec 2023 - Jan 2024 &middot; 2 months</p>
+                        <p class="exp-desc">Full Stack Developer Intern at Varcons Technologies Pvt. Ltd. Contributed as a Full Stack Developer Intern at Varcons Technologies, engaging in end-to-end web development projects. Enhanced skills in both front-end and back-end technologies.</p>
+                        <a href="4RA21CS070.pdf" target="_blank" class="btn btn-sm" data-magnetic>Open Certificate</a>
+                    </div>
+                </article>
+
+                <article class="timeline-item scroll-reveal">
+                    <h3 class="timeline-title">AI - Machine Learning Engineer</h3>
+                    <div class="exp-card" data-tilt>
+                        <p class="exp-company">Rooman Technologies Pvt Ltd. &middot; Internship &middot; Remote</p>
+                        <p class="exp-date">Sep 2024 - Mar 2025 &middot; 7 months</p>
+                        <p class="exp-desc">Completed an AI/ML Engineering internship at Rooman Technologies, gaining hands-on experience in machine learning, data preprocessing, and model development using Python and TensorFlow on real-world predictive analytics and computer vision projects.</p>
+                        <a href="Rooman.pdf" target="_blank" class="btn btn-sm" data-magnetic>Open Certificate</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="education-section" id="education">
+            <div class="container">
+                <h2 class="section-title scroll-reveal">Education</h2>
+                <div class="edu-grid">
+                    <article class="edu-card scroll-reveal" data-tilt>
+                        <div class="edu-logo vtu-logo" aria-hidden="true"></div>
+                        <div class="edu-info">
+                            <h3 class="inst-name">Visvesvaraya Technological University</h3>
+                            <p class="edu-qualification">Bachelor of Engineering - B.E In Computer Science</p>
+                            <p class="course-duration">Dec 2021 - Jul 2025</p>
+                            <p class="grade">Grade: Current - 8.5 CGPA</p>
+                        </div>
+                    </article>
+
+                    <article class="edu-card scroll-reveal" data-tilt>
+                        <div class="edu-logo pu-logo" aria-hidden="true"></div>
+                        <div class="edu-info">
+                            <h3 class="inst-name">Sri Pushpagiri Mahasamsthana PU College</h3>
+                            <p class="edu-qualification">Associate's degree, Science</p>
+                            <p class="course-duration">May 2019 - Sep 2021</p>
+                            <p class="grade">Grade: 83.16%</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills-section" id="skills">
+            <div class="container">
+                <h2 class="section-title scroll-reveal">Skills</h2>
+                <div class="skills-columns interactive-grid">
+                    <div class="skills-col">
+                        <div class="skill-card scroll-reveal" data-tilt>
+                            <i class="fab fa-java" aria-hidden="true"></i>
+                            <h3 class="skill-title">Java</h3>
+                            <p class="skill-desc">Core Java, Advanced Java</p>
+                        </div>
+                        <div class="skill-card scroll-reveal" data-tilt>
+                            <i class="fas fa-leaf" aria-hidden="true"></i>
+                            <h3 class="skill-title">Spring Boot</h3>
+                            <p class="skill-desc">Spring, Servlets</p>
+                        </div>
+                        <div class="skill-card scroll-reveal" data-tilt>
+                            <i class="fas fa-plug" aria-hidden="true"></i>
+                            <h3 class="skill-title">JDBC & Hibernate</h3>
+                            <p class="skill-desc">Database Connectivity, ORM</p>
+                        </div>
+                        <div class="skill-card scroll-reveal" data-tilt>
+                            <i class="fas fa-terminal" aria-hidden="true"></i>
+                            <h3 class="skill-title">C Programming</h3>
+                            <p class="skill-desc">Procedural & Structured Programming</p>
+                        </div>
+                        <div class="skill-card scroll-reveal" data-tilt>
+                            <i class="fas fa-database" aria-hidden="true"></i>
+                            <h3 class="skill-title">SQL</h3>
+                            <p class="skill-desc">SQL, MySQL, PL/SQL</p>
+                        </div>
+                    </div>
+                    <div class="skills-col">
+                        <div class="skill-card scroll-reveal" data-tilt>
+                            <i class="fas fa-code" aria-hidden="true"></i>
+                            <h3 class="skill-title">Web Development</h3>
+                            <p class="skill-desc">HTML5, CSS, JavaScript</p>
+                        </div>
+                        <div class="skill-card scroll-reveal" data-tilt>
+                            <i class="fab fa-python" aria-hidden="true"></i>
+                            <h3 class="skill-title">Django</h3>
+                            <p class="skill-desc">Python Web Framework</p>
+                        </div>
+                        <div class="skill-card scroll-reveal" data-tilt>
+                            <i class="fas fa-pencil-ruler" aria-hidden="true"></i>
+                            <h3 class="skill-title">UI/UX Design</h3>
+                            <p class="skill-desc">Figma, Wireframes, Prototyping</p>
+                        </div>
+                        <div class="skill-card scroll-reveal" data-tilt>
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                            <h3 class="skill-title">Git & GitHub</h3>
+                            <p class="skill-desc">Version Control, Collaboration</p>
+                        </div>
+                        <div class="skill-card scroll-reveal" data-tilt>
+                            <i class="fas fa-layer-group" aria-hidden="true"></i>
+                            <h3 class="skill-title">Frontend & Backend</h3>
+                            <p class="skill-desc">Full Stack Architecture</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-card center-card mt-4 scroll-reveal" data-tilt>
+                    <i class="fas fa-brain" aria-hidden="true"></i>
+                    <h3 class="skill-title">Programming Logic & AI Tools</h3>
+                    <p class="skill-desc">Problem-solving, algorithms, and project experience with DALL-E 2 for generative AI content.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects-section" id="projects">
+            <div class="container">
+                <h2 class="section-title scroll-reveal">Projects</h2>
+                <div class="projects-grid interactive-grid">
+                    <article class="project-card scroll-reveal" data-tilt>
+                        <h3 class="project-title">MediaMorph AI: Generative AI For Content Creation</h3>
+                        <p class="project-desc">A mini project on Generative AI called 'MediaMorph AI' for our VTU 6th semester curriculum. It generates media content from user prompts. We chose Django for building dynamic web applications, and OpenAI as our AI model.</p>
+                        <a href="https://github.com/Sharan-m-04/MediaMorph-AI" class="btn btn-outline" target="_blank" rel="noopener noreferrer" data-magnetic>View Project</a>
+                    </article>
+                    
+                    <article class="project-card scroll-reveal" data-tilt>
+                        <h3 class="project-title">Ignyt - The Beer Lounge</h3>
+                        <p class="project-desc">Internship Project at Varcons Technologies Pvt. Ltd.: Collaborated on developing a dynamic web platform for the client 'Ignyt - The Beer Lounge'. Leveraged Django to enhance user experience and streamline pub operations.</p>
+                        <a href="https://github.com/Sharan-m-04/Ignyt-Beer-Station" class="btn btn-outline" target="_blank" rel="noopener noreferrer" data-magnetic>View Project</a>
+                    </article>
+
+                    <article class="project-card scroll-reveal" data-tilt>
+                        <h3 class="project-title">HangMan Game</h3>
+                        <p class="project-desc">Developed a data-driven Hangman game with optimized mechanics, intuitive design, and engaging gameplay to enhance user experience.</p>
+                        <a href="https://github.com/Rohan-ms23/HangMan-Game" class="btn btn-outline" target="_blank" rel="noopener noreferrer" data-magnetic>View Project</a>
+                    </article>
+
+                    <article class="project-card scroll-reveal" data-tilt>
+                        <h3 class="project-title">Bank Locker Management System</h3>
+                        <p class="project-desc">Created a bank locker management system to enhance security, streamline access, and improve customer experience with intuitive features.</p>
+                        <a href="project4.html" class="btn btn-outline" target="_blank" data-magnetic>View Project</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section class="certifications-section" id="certifications">
+            <div class="container">
+                <h2 class="section-title scroll-reveal">Certifications</h2>
+                <div class="certifications-grid interactive-grid">
+                    <article class="cert-card scroll-reveal" data-tilt>
+                        <h3 class="cert-title">AI - Machine Learning Engineer</h3>
+                        <p class="cert-desc">Issued by Rooman Technologies – Completed a comprehensive course on core ML concepts and algorithms.</p>
+                        <a href="https://online.rooman.com/certificate/5dedb42b34e50082065a783265ce28a8" class="btn btn-outline" target="_blank" rel="noopener noreferrer" data-magnetic>View Credential</a>
+                    </article>
+
+                    <article class="cert-card scroll-reveal" data-tilt>
+                        <h3 class="cert-title">Language Understanding with Models</h3>
+                        <p class="cert-desc">Issued by IBM – Focused on data analysis, visualization, and Python programming.</p>
+                        <a href="https://qr.me-qr.com/mobile/pdf/1d1c891e-3422-4054-a4b7-e88ba37b5cbd" class="btn btn-outline" target="_blank" rel="noopener noreferrer" data-magnetic>View Credential</a>
+                    </article>
+
+                    <article class="cert-card scroll-reveal" data-tilt>
+                        <h3 class="cert-title">Infosys Foundation</h3>
+                        <p class="cert-desc">Issued by Infosys – Explored Full Stack Web Development With The Python.</p>
+                        <a href="G-2024-G4044-0067" class="btn btn-outline" target="_blank" rel="noopener noreferrer" data-magnetic>View Credential</a>
+                    </article>
+
+                    <article class="cert-card scroll-reveal" data-tilt>
+                        <h3 class="cert-title">Wadhwani Foundation</h3>
+                        <p class="cert-desc">Issued by Wadhwani - Developed strong communication and interpersonal skills through collaboration.</p>
+                        <a href="https://web.certificate.wfglobal.org/en/certificate?certificateId=673492b8d74d60ffbbb099cf" class="btn btn-outline" target="_blank" rel="noopener noreferrer" data-magnetic>View Credential</a>
+                    </article>
+
+                    <article class="cert-card scroll-reveal" data-tilt>
+                        <h3 class="cert-title">Varcons Technologies Pvt Ltd</h3>
+                        <p class="cert-desc">Issued by Varcons – Gained practical insights into Full stack development with HTML, CSS.</p>
+                        <a href="bit.ly/3RI1YVU" class="btn btn-outline" target="_blank" rel="noopener noreferrer" data-magnetic>View Credential</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact-me">
+            <div class="container">
+                <div class="form-wrapper scroll-reveal" data-tilt>
+                    <h2 class="section-title">Contact Me</h2>
+                    <form action="https://api.web3forms.com/submit" method="POST" class="form-container">
+                        <input type="hidden" name="access_key" value="ab0977c2-f32a-4a1b-8bb4-bdb179d32826">
+                        
+                        <div class="form-group input-animated">
+                            <input class="form-input" type="text" id="name" name="name" required placeholder=" ">
+                            <label for="name">Your Name</label>
+                            <div class="input-border"></div>
+                        </div>
+                        
+                        <div class="form-group input-animated">
+                            <input class="form-input" type="email" id="email" name="email" required placeholder=" ">
+                            <label for="email">Your Email</label>
+                            <div class="input-border"></div>
+                        </div>
+                        
+                        <div class="form-group input-animated">
+                            <textarea class="form-input" id="message" name="message" rows="5" required placeholder=" "></textarea>
+                            <label for="message">Your Message</label>
+                            <div class="input-border"></div>
+                        </div>
+                        
+                        <button class="btn btn-primary btn-submit" type="submit" id="submit" data-magnetic>
+                            <span>Send Message</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
         </section>
     </main>
 
-    <section class="edu-section" id="education">
-        <p class="edu-head">Education</p>
-        <div class="edu-card reveal fade-pop">
-            <div class="edu-logo-1"></div>
-            <p class="inst-name">Visvesvaraya Technological University</p>
-            <p class="edu-qualification">Bachelor of Engineering - B.E In Computer Science</p>
-            <p class="course-duration">Dec 2021 - Jul 2025</p>
-            <p class="grade">Grade: Current - 8.5 CGPA</p>
-        </div>
-        </div>
-        <div class="edu-card reveal fade-pop">
-            <div class="edu-logo-2"></div>
-            <p class="inst-name">Sri Pushpagiri Mahasamsthana PU College</p>
-            <p class="edu-qualification">Associate's degree, Science</p>
-            <p class="course-duration">May 2019 - Sep 2021</p>
-            <p class="grade">Grade: 83.16%</p>
-        </div>
-    </section>
+    <!-- Back to Top Button -->
+    <button id="rToTop" class="back-to-top" aria-label="Go to top" title="Go to top" data-magnetic>
+        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </button>
 
-    <section class="thirdSection" id="skills">
-        <p class="h5">Skills</p>
-        <div class="skills-columns">
-            <div class="skills-col">
-                <div class="skill-card">
-                    <i class="fab fa-java"></i>
-                    <div class="skill-title">Java</div>
-                    <div class="skill-desc">Core Java, Advanced Java</div>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-leaf"></i>
-                    <div class="skill-title">Spring Boot</div>
-                    <div class="skill-desc">Spring, Servlets</div>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-plug"></i>
-                    <div class="skill-title">JDBC & Hibernate</div>
-                    <div class="skill-desc">Database Connectivity, ORM</div>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-terminal"></i>
-                    <div class="skill-title">C Programming</div>
-                    <div class="skill-desc">Procedural & Structured Programming</div>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-database"></i>
-                    <div class="skill-title">SQL</div>
-                    <div class="skill-desc">SQL, MySQL, PL/SQL</div>
-                </div>
-            </div>
-            <div class="skills-col">
-                <div class="skill-card">
-                    <i class="fas fa-code"></i>
-                    <div class="skill-title">Web Development</div>
-                    <div class="skill-desc">HTML5, CSS, JavaScript</div>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-python"></i>
-                    <div class="skill-title">Django</div>
-                    <div class="skill-desc">Python Web Framework</div>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-pencil-ruler"></i>
-                    <div class="skill-title">UI/UX Design</div>
-                    <div class="skill-desc">Figma, Wireframes, Prototyping</div>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-github"></i>
-                    <div class="skill-title">Git & GitHub</div>
-                    <div class="skill-desc">Version Control, Collaboration</div>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-layer-group"></i>
-                    <div class="skill-title">Frontend, Backend & Middleware</div>
-                    <div class="skill-desc">Full Stack Application Architecture</div>
-                </div>
-            </div>
-            <div class="skill-card center-card">
-                <i class="fas fa-brain"></i>
-                <div class="skill-title">Programming Logic & AI Tools</div>
-                <div class="skill-desc">
-                    Problem-solving, algorithms, and project experience with DALL-E 2 for generative AI content.
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="projects-section" id="projects">
-        <h2 class="projects-head">Projects</h2>
-        <div class="projects">
-            <div class="project" id="project1">
-                <h2>MediaMorph AI: Generative AI For Content Creation</h2>
-                <p>
-                    A mini project on Generative AI called 'MediaMorph AI' for our VTU 6th semester curriculum. It
-                    generates media content from user prompts. We chose Django for building dynamic web applications,
-                    and OpenAI as our AI model.
-                </p>
-                <a href="https://github.com/Sharan-m-04/MediaMorph-AI" class="view-more" target="_blank">View
-                    Project</a>
-            </div>
-            <div class="project" id="project2">
-                <h2>Ignyt - The Beer Lounge</h2>
-                <p>
-                    Internship Project at Varcons Technologies Pvt. Ltd.: Collaborated on developing a dynamic web
-                    platform for the client 'Ignyt - The Beer Lounge'. Leveraged Django to enhance user experience and
-                    streamline pub operations.
-                </p>
-                <a href="https://github.com/Sharan-m-04/Ignyt-Beer-Station" class="view-more" target="_blank">View
-                    Project</a>
-            </div>
-            <div class="project" id="project3">
-                <h2>HangMan Game</h2>
-                <p>
-                    Developed a data-driven Hangman game with optimized mechanics, intuitive design, and engaging
-                    gameplay to enhance user experience.
-                </p>
-                <a href="https://github.com/Rohan-ms23/HangMan-Game" class="view-more" target="_blank">View Project</a>
-            </div>
-            <div class="project" id="project4">
-                <h2>Bank Locker Management System</h2>
-                <p>
-                    Created a bank locker management system to enhance security, streamline access, and improve customer
-                    experience with intuitive features.
-                </p>
-                <a href="project4.html" class="view-more" target="_blank">View Project</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="certifications-section" id="certifications">
-  <h2 class="certifications-head">Certifications</h2>
-  <div class="certifications">
-    <div class="certificate">
-      <h3>AI - Machine Learning Engineer</h3>
-      <p>Issued by Rooman Technologies – Completed a comprehensive course on core ML concepts and algorithms.</p>
-      <a href="https://online.rooman.com/certificate/5dedb42b34e50082065a783265ce28a8" class="view-credential" target="_blank">View Credential</a>
-    </div>
-    <div class="certificate">
-      <h3>Language Understanding with Models: Elevating NLP Capabilities </h3>
-      <p>Issued by IBM – Focused on data analysis, visualization, and Python programming.</p>
-      <a href="https://qr.me-qr.com/mobile/pdf/1d1c891e-3422-4054-a4b7-e88ba37b5cbd" class="view-credential" target="_blank">View Credential</a>
-    </div>
-    <div class="certificate">
-      <h3>Infosys Foundation </h3>
-      <p>Issued by Infosys – Explored Full Stack Web Development With The Python.</p>
-      <a href="G-2024-G4044-0067" class="view-credential" target="_blank">View Credential</a>
-    </div>
-    <div class="certificate">
-      <h3>Wadhwani Foundation </h3>
-      <p>Issued by Wadhwani - Developed strong communication and interpersonal skills through collaboration</p>
-      <a href="https://web.certificate.wfglobal.org/en/certificate?certificateId=673492b8d74d60ffbbb099cf" class="view-credential" target="_blank">View Credential</a>
-    </div>
-    <div class="certificate">
-      <h3>Varcons Technologies Pvt Ltd </h3>
-      <p>Issued by Varcons – Gained practical insights into Full stack development with HTML, CSS.</p>
-      <a href="bit.ly/3RI1YVU" class="view-credential" target="_blank">View Credential</a>
-    </div>
-  </div>
-</section>
-
-
-
-    <section class="contact-section" id="contact-me">
-        <h2 class="contact-head">Contact Me</h2>
-        <form action="https://api.web3forms.com/submit" method="POST" class="form-container fade">
-            <input type="hidden" name="access_key" value="ab0977c2-f32a-4a1b-8bb4-bdb179d32826">
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input class="contact-input" type="text" id="name" name="name" required placeholder="Your Name">
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input class="contact-input" type="email" id="email" name="email" required placeholder="Your Email">
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea class="contact-input" id="message" name="message" rows="5" required
-                    placeholder="Your Message"></textarea>
-            </div>
-            <button class="contact-submit-btn" type="submit" id="submit">Send</button>
-        </form>
-    </section>
-    <button id="rToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
-    <section class="footer">
-        <div class="footer-content">
-            <p class="footer-head">Rohan M S &mdash; Developer Portfolio</p>
-            <nav class="footer-nav">
-                <ul class="footer-navul">
-                    <li><a href="#" class="footer-navLink">Home</a></li>
-                    <li><a href="#about" class="footer-navLink">About</a></li>
-                    <li><a href="#experience" class="footer-navLink">Experience</a></li>
-                    <li><a href="#education" class="footer-navLink">Education</a></li>
-                    <li><a href="#skills" class="footer-navLink">Skills</a></li>
-                    <li><a href="#projects" class="footer-navLink">Projects</a></li>
-                    <li><a href="#contact-me" class="footer-navLink">Contact</a></li>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p class="footer-brand scroll-reveal">Rohan M S &mdash; Developer Portfolio</p>
+            <nav aria-label="Footer Navigation" class="scroll-reveal">
+                <ul class="footer-nav">
+                    <li><a href="#" class="footer-link" data-magnetic>Home</a></li>
+                    <li><a href="#about" class="footer-link" data-magnetic>About</a></li>
+                    <li><a href="#experience" class="footer-link" data-magnetic>Experience</a></li>
+                    <li><a href="#education" class="footer-link" data-magnetic>Education</a></li>
+                    <li><a href="#skills" class="footer-link" data-magnetic>Skills</a></li>
+                    <li><a href="#projects" class="footer-link" data-magnetic>Projects</a></li>
+                    <li><a href="#contact-me" class="footer-link" data-magnetic>Contact</a></li>
                 </ul>
             </nav>
-            <div class="social-links">
-                <a href="mailto:rohanms0405@gmail.com" class="social-icons" target="_blank" title="Email"><i
-                        class="fa-solid fa-envelope"></i></a>
-                <a href="https://github.com/Rohan-ms23" class="social-icons" target="_blank" title="GitHub"><i
-                        class="fa-brands fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/rohan-ms23" class="social-icons" target="_blank"
-                    title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://www.instagram.com/rohan_ro23/" class="social-icons" target="_blank"
-                    title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://twitter.com/rohanms0405" class="social-icons" target="_blank" title="Twitter"><i
-                        class="fa-brands fa-twitter"></i></a>
+            <div class="social-links scroll-reveal">
+                <a href="mailto:rohanms0405@gmail.com" class="social-icon" target="_blank" aria-label="Email" title="Email" data-magnetic><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+                <a href="https://github.com/Rohan-ms23" class="social-icon" target="_blank" aria-label="GitHub" title="GitHub" data-magnetic><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/in/rohan-ms23" class="social-icon" target="_blank" aria-label="LinkedIn" title="LinkedIn" data-magnetic><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+                <a href="https://www.instagram.com/rohan_ro23/" class="social-icon" target="_blank" aria-label="Instagram" title="Instagram" data-magnetic><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                <a href="https://twitter.com/rohanms0405" class="social-icon" target="_blank" aria-label="Twitter" title="Twitter" data-magnetic><i class="fa-brands fa-twitter" aria-hidden="true"></i></a>
             </div>
         </div>
-    </section>
+    </footer>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<h2 id="element"></h2>
-<script>
-const typedOptions = {
-  strings: [
-    'Computer Science Graduate.',
-    'Full Stack Web Developer.',
-    'Web Designer.',
-    'UI/UX Enthusiast.',
-    'SQL Specialist.',
-    'Spring Boot Developer.'
-  ],
-  typeSpeed: 40,
-  backSpeed: 20,
-  loop: false,
-  showCursor: true,
-  cursorChar: '|'
-};
-
-let typedInstance;
-
-if (typeof observer !== 'undefined') {
-  observer.observe(document.querySelector('#element'));
-  const originalCallback = observer.callback || observer._callback || (() => {});
-  const newCallback = (entries) => {
-    entries.forEach(entry => {
-      if (entry.target.id === 'element') {
-        if (entry.isIntersecting) {
-          if (!typedInstance) typedInstance = new Typed('#element', typedOptions);
-        } else {
-          if (typedInstance) {
-            typedInstance.destroy();
-            typedInstance = null;
-            document.querySelector('#element').textContent = '';
-          }
-        }
-      }
-    });
-    if (typeof originalCallback === 'function') originalCallback(entries);
-  };
-  observer.callback = newCallback;
-} else {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && entry.target.id === 'element') {
-        if (!typedInstance) typedInstance = new Typed('#element', typedOptions);
-      } else if (entry.target.id === 'element') {
-        if (typedInstance) {
-          typedInstance.destroy();
-          typedInstance = null;
-          document.querySelector('#element').textContent = '';
-        }
-      }
-    });
-  }, { threshold: 0.3 });
-  observer.observe(document.querySelector('#element'));
-}
-</script>
-
-    <script>
-        const burger = document.querySelector('.burger');
-const navig = document.querySelector('.navig');
-const navul = document.querySelector('.navul');
-
-// Ensure mobile nav is closed on page load
-navig.classList.remove('h-nav-resp');
-navul.classList.remove('v-class-resp');
-
-burger.addEventListener('click', () => {
-    navig.classList.toggle('h-nav-resp');  // toggle burger animation
-    navul.classList.toggle('v-class-resp'); // show/hide menu
-});
-
-// Close menu when a link is clicked
-document.querySelectorAll('.navLink').forEach(link => {
-    link.addEventListener('click', () => {
-        navig.classList.remove('h-nav-resp');
-        navul.classList.remove('v-class-resp');
-    });
-});
-</script>
-
-
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                }
-            });
-        }, { threshold: 0.1 });
-
-
-        observer.observe(document.querySelector('.secondSection'));
-    </script>
-    <script>
-
-        let rToTop = document.getElementById("rToTop");
-
-        window.onscroll = function () {
-            scrollFunction();
-        };
-
-        function scrollFunction() {
-            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-                rToTop.style.display = "block";
-            }
-            else {
-                rToTop.style.display = "none";
-            }
-        }
-
-        rToTop.addEventListener("click", backToTop);
-        function backToTop() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
-
-    </script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const projects = document.querySelectorAll('.project');
-
-            projects.forEach((project, index) => {
-                project.style.animation = `fadeIn 0.5s ease ${(index + 1) * 0.3}s both`;
-            });
-        });
-
-
-        const styleSheet = document.styleSheets[0];
-        styleSheet.insertRule(`
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-    `, styleSheet.cssRules.length);
-    </script>
+    <script src="script.js"></script>
 </body>
-
-    </html>
+</html>
